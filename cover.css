@@ -30,6 +30,21 @@ a:hover {
 }
 
 
+/* ZAP Ad Glow */
+
+.zapGlow {
+    animation: imgGlow 1s infinite alternate;
+}
+
+@keyframes imgGlow {
+    from {
+        box-shadow: 0 0 8px 0px rgba(45, 11, 62, 1);
+    }
+    to {
+        box-shadow: 0 0 8px 8px rgba(45, 11, 62, 1);
+    }
+}
+
 /*
  * Base structure
  */
