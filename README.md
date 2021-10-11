@@ -5,6 +5,6 @@ If you are here, you are probably looking for one of the following links:
 - [Official Discord Server](https://discord.gg/yWxjt9zPWR)
 - [Secret Link, what could it be?!](https://youtu.be/8CKjNcSUNt8)  
   
-  landing page by [Noodles](https://github.com/goodnightnoodles), so cool
+Landing page by [Noodles](https://github.com/goodnightnoodles).
   
 Now bye bye 👋
