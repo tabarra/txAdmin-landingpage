@@ -1,0 +1,47 @@
+{
+  "index.tsx -> ../components/About": {
+    "id": 7954,
+    "files": [
+      "static/chunks/217.78170b72c833a90c177f.js",
+      "static/chunks/954.c17fb2e8e813402a17fa.js"
+    ]
+  },
+  "index.tsx -> ../components/Features": {
+    "id": 5996,
+    "files": [
+      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
+      "static/chunks/217.78170b72c833a90c177f.js",
+      "static/chunks/996.1896bef410a768302ebd.js"
+    ]
+  },
+  "index.tsx -> ../components/Footer": {
+    "id": 4668,
+    "files": [
+      "static/chunks/668.37f240fbb598fbd55cda.js"
+    ]
+  },
+  "index.tsx -> ../components/FooterCTA": {
+    "id": 3691,
+    "files": [
+      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
+      "static/chunks/839.652f847aad7bca5e629c.js",
+      "static/chunks/691.352938a716c3f1a27547.js"
+    ]
+  },
+  "index.tsx -> ../components/Header": {
+    "id": 5774,
+    "files": [
+      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
+      "static/chunks/839.652f847aad7bca5e629c.js",
+      "static/chunks/648.4b2107d59c08de113f5e.js",
+      "static/chunks/34.be1eef7cf95550e67989.js"
+    ]
+  },
+  "index.tsx -> ../components/ZAPCTA": {
+    "id": 8596,
+    "files": [
+      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
+      "static/chunks/596.01191b845a22a5e5401c.js"
+    ]
+  }
+}

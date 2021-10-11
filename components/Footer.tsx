@@ -12,7 +12,7 @@ export default function Footer() {
       <p>txAdmin is licensed under the MIT license.</p>
     </div>
     <div className="text-sm space-y-4 mt-2 md:space-y-1 text-center md:text-left">
-      <p>Made with ❤️ by Tabarra.</p>
+      <p>Page by Noodles#1234.</p>
     </div>
   </div>
 </div>

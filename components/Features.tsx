@@ -29,7 +29,7 @@ export default function Features() {
         <div className="space-y-2 mx-auto p-7">
       <ServerIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
       <h2 className="text-center text-2xl text-white">Server Management</h2> 
-      <p className="text-gray-400">Start, stop, or restart your server instance or resources and edit your server's configuration with ease.</p>
+      <p className="text-gray-400">Start, stop, or restart your server instance or resources and edit your server&apos;s configuration with ease.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
@@ -43,7 +43,7 @@ export default function Features() {
         <div className="space-y-2 mx-auto p-7">
       <ChartBarIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
       <h2 className="text-center text-2xl text-white">Performance Analytics</h2>
-      <p className="text-gray-400">Gain an insight on your server's performance on all 3 threads via the in-depth performance chart.</p>
+      <p className="text-gray-400">Gain an insight on your server&apos;s performance on all 3 threads via the in-depth performance chart.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">

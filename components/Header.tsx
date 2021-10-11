@@ -58,7 +58,7 @@ export default function Home() {
                         </div>
                   <div className="mt-3 text-center sm:mt-0 sm:text-left">
                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-green-200">
-                      Let's get you up and running.
+                      Let&apos;s get you up and running.
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
@@ -221,17 +221,17 @@ export default function Home() {
   <div className="space-y-10">
   <div className="flex justify-center mt-3 space-x-2">
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-2xl font-bold"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={10} />k+</span>
+<span className="text-green-300 text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={10} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">servers <span className="hidden md:inline">online</span></span>
 </div>
 
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-2xl font-bold"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={32} />k+</span>
+<span className="text-green-300 text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={32} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">admins</span>
 </div>
 
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-2xl font-bold"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={669} />k+</span>
+<span className="text-green-300 text-4xl"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={669} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">bans</span>
 </div>
   </div>
