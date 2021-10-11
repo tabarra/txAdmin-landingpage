@@ -231,7 +231,7 @@ export default function Home() {
 </div>
 
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-txgreen text-3xl md:text-4xl"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={669} />k+</span>
+<span className="text-txgreen text-3xl md:text-4xl"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={661} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">bans</span>
 </div>
   </div>
