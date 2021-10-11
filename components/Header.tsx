@@ -150,8 +150,7 @@ export default function Home() {
                     <Dialog.Title className="text-lg font-medium text-gray-200">Navigation</Dialog.Title>
                   </div>
                   <div className="mt-6 relative flex-1 px-4 sm:px-6">
-                    <div className="flex flex-col space-y-2">
-                      <nav>
+                    <nav className="flex flex-col space-y-2">
                             <a
                               className="text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                               href="https://github.com/tabarra/txAdmin/blob/master/README.md"
@@ -177,7 +176,6 @@ export default function Home() {
                               GitHub
                             </a>
                             </nav>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -210,13 +208,11 @@ export default function Home() {
             <button aria-label="Mobile Navigation Button" className="flex md:hidden bg-gray-300 hover:bg-gray-200 duration-200 ease-in-out p-2 rounded-xl" onClick={() => setmenuOpen(true)}>
             <MenuAlt4Icon className="h-6 w-6 text-gray-900" />
             </button>
-            <div className="hidden md:block space-x-1 text-base text-white font-medium">
-              <nav>
+            <nav className="hidden md:block space-x-1 text-base text-white font-medium">
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin/blob/master/README.md">Documentation</a>
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://discord.gg/yWxjt9zPWR">Discord</a>
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin">GitHub</a>
               </nav>
-            </div>
         </div>
         <div className="flex my-40 space-y-96">
             <div className="flex flex-col mx-auto w-10/12 space-y-4 text-center">
