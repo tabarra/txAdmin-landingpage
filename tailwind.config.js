@@ -16,12 +16,13 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'hero': "url('/hero.svg')",
+        'hero': "url('/hero.jpg')",
         'snaily': "url('/snaily.svg')",
        }),
       colors: {
         'content': '#192338',
         'cta': '#0c111c',
+        'txgreen': '#45E696',
       },
       fontFamily: {
         sans: ['"Montserrat"', 'sans-serif']

@@ -225,37 +225,37 @@ export default function Home() {
   <div className="space-y-10">
   <div className="flex justify-center mt-3 space-x-2">
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-3xl md:text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={10} />k+</span>
+<span className="text-txgreen text-3xl md:text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={10} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">servers <span className="hidden md:inline">online</span></span>
 </div>
 
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-3xl md:text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={32} />k+</span>
+<span className="text-txgreen text-3xl md:text-4xl"><CountUp duration={2.90} separator="," useEasing={true} start={1} end={32} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">admins</span>
 </div>
 
 <div className="flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20">
-<span className="text-green-300 text-3xl md:text-4xl"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={669} />k+</span>
+<span className="text-txgreen text-3xl md:text-4xl"><CountUp duration={2.50} separator="," useEasing={true} start={1} end={669} />k+</span>
 <span className="text-gray-300 text-sm md:text-base">bans</span>
 </div>
   </div>
   <div className="flex flex-col space-y-2 justify-center md:flex-row md:space-y-0 md:space-x-2">
 
 <div>
-<button className="hidden group flex mx-auto justify-center w-60 md:w-44 bg-green-600 hover:bg-green-500 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
+<button className="hidden group flex mx-auto justify-center w-60 md:w-44 bg-txgreen hover:bg-green-400 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
                 Statistics
                 <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
         </button>
         </div>
 
         <div>
-<button className="hidden group flex mx-auto justify-center w-60 md:w-44 bg-green-600 hover:bg-green-500 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
+<button className="hidden group flex mx-auto justify-center w-60 md:w-44 bg-txgreen hover:bg-green-400 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
                 How to Login
                 <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
         </button>
         </div>
         <div>
-<button onClick={()=> setOpen(true)} className="group flex mx-auto justify-center w-60 bg-green-600 hover:bg-green-500 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
+<button onClick={()=> setOpen(true)} className="group flex mx-auto justify-center w-60 bg-txgreen hover:bg-green-400 text-black font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out">
                 Get Started
                 <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
         </button>

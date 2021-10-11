@@ -101,7 +101,7 @@ export default function FooterCallToAction() {
         <p className="text-gray-400 text-base xl:text-lg whitespace-normal">Adding txAdmin to your server is completely free and super easy.</p>
         </div>
         <div>
-        <button onClick={() => setOpen(true)} className="group flex bg-green-600 hover:bg-green-500 rounded-lg text-white font-bold text-base py-3 px-4 transition duration-200 ease-in-out">
+        <button onClick={() => setOpen(true)} className="group flex bg-txgreen hover:bg-green-500 rounded-lg text-black font-bold text-base py-3 px-4 transition duration-200 ease-in-out">
                 Get Started
                 <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
         </button>
