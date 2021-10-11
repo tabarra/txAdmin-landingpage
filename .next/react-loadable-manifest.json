@@ -1,47 +1,44 @@
 {
-  "index.tsx -> ../components/About": {
-    "id": 7954,
+  "../node_modules/next/dist/client/next-dev.js -> ./dev/noop": {
+    "id": "./node_modules/next/dist/client/dev/noop.js",
     "files": [
-      "static/chunks/217.78170b72c833a90c177f.js",
-      "static/chunks/954.c17fb2e8e813402a17fa.js"
+      "static/chunks/node_modules_next_dist_client_dev_noop_js.js"
+    ]
+  },
+  "index.tsx -> ../components/About": {
+    "id": "./components/About.tsx",
+    "files": [
+      "static/chunks/components_About_tsx.js"
     ]
   },
   "index.tsx -> ../components/Features": {
-    "id": 5996,
+    "id": "./components/Features.tsx",
     "files": [
-      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
-      "static/chunks/217.78170b72c833a90c177f.js",
-      "static/chunks/996.1896bef410a768302ebd.js"
+      "static/chunks/components_Features_tsx.js"
     ]
   },
   "index.tsx -> ../components/Footer": {
-    "id": 4668,
+    "id": "./components/Footer.tsx",
     "files": [
-      "static/chunks/668.37f240fbb598fbd55cda.js"
+      "static/chunks/components_Footer_tsx.js"
     ]
   },
   "index.tsx -> ../components/FooterCTA": {
-    "id": 3691,
+    "id": "./components/FooterCTA.tsx",
     "files": [
-      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
-      "static/chunks/839.652f847aad7bca5e629c.js",
-      "static/chunks/691.352938a716c3f1a27547.js"
+      "static/chunks/components_FooterCTA_tsx.js"
     ]
   },
   "index.tsx -> ../components/Header": {
-    "id": 5774,
+    "id": "./components/Header.tsx",
     "files": [
-      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
-      "static/chunks/839.652f847aad7bca5e629c.js",
-      "static/chunks/648.4b2107d59c08de113f5e.js",
-      "static/chunks/34.be1eef7cf95550e67989.js"
+      "static/chunks/components_Header_tsx.js"
     ]
   },
   "index.tsx -> ../components/ZAPCTA": {
-    "id": 8596,
+    "id": "./components/ZAPCTA.tsx",
     "files": [
-      "static/chunks/commons.4a7d9b9b2f338dbd25ef.js",
-      "static/chunks/596.01191b845a22a5e5401c.js"
+      "static/chunks/components_ZAPCTA_tsx.js"
     ]
   }
 }
