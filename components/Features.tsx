@@ -19,7 +19,7 @@ export default function Features() {
     <div>
       <Reveal keyframes={slideup} triggerOnce={true}>
       <div className="text-center space-y-2 m-8">
-      <h2 className="text-3xl font-bold text-white">Everything you need to manage your server</h2>
+      <h3 className="text-3xl font-bold text-white">Everything you need to manage your server</h3>
       <p className="text-gray-400 text-base">txAdmin has everything you need to manage your server, ranging from moderation to monitoring.</p>
       </div>
       </Reveal>
@@ -28,42 +28,42 @@ export default function Features() {
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <ServerIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Server Management</h2> 
+      <h4 className="text-center text-2xl text-white">Server Management</h4> 
       <p className="text-gray-400">Start, stop, or restart your server instance or resources and edit your server&apos;s configuration with ease.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <AdjustmentsIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Server Recipes</h2>
+      <h4 className="text-center text-2xl text-white">Server Recipes</h4>
       <p className="text-gray-400">Get a server up and running in under 60 seconds with ease using the txAdmin recipe deployer.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <ChartBarIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Performance Analytics</h2>
+      <h4 className="text-center text-2xl text-white">Performance Analytics</h4>
       <p className="text-gray-400">Gain an insight on your server&apos;s performance on all 3 threads via the in-depth performance chart.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <UsersIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Player Management</h2>
+      <h4 className="text-center text-2xl text-white">Player Management</h4>
       <p className="text-gray-400">Manage players with simplicity using the txAdmin player manager. Featuring bans, warns, whitelisting and more.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <LockClosedIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Security</h2>
+      <h4 className="text-center text-2xl text-white">Security</h4>
       <p className="text-gray-400">txAdmin features authentication via CitizenFX, admin permissions, action logging, and brute-force protection.</p>
       </div>
       </div>
       <div className="flex bg-content group transform duration-200 ease-in-out hover:scale-105 rounded-2xl">
         <div className="space-y-2 mx-auto p-7">
       <SearchIcon className="flex mx-auto justify-center h-14 w-14 bg-green-500 duration-200 ease-in-out group-hover:bg-green-700 text-gray-200 rounded-2xl p-3" />
-      <h2 className="text-center text-2xl text-white">Monitoring</h2>
+      <h4 className="text-center text-2xl text-white">Monitoring</h4>
       <p className="text-gray-400">Monitoring your server is easy with txAdmin. Featuring auto restarts on crash, live console, RAM/CPU monitoring, and more.</p>
       </div>
       </div>

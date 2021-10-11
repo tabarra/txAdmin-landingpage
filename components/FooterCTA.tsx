@@ -97,7 +97,7 @@ export default function FooterCallToAction() {
       <div className="bg-cta shadow-md">
     <div className="flex flex-col space-y-7 lg:space-y-0 lg:flex-row p-12 justify-evenly items-center">
         <div className="space-y-5 text-center lg:text-left lg:space-y-0">
-        <h2 className="text-white font-bold text-2xl">Like what you see?</h2>
+        <h3 className="text-white font-bold text-2xl">Like what you see?</h3>
         <p className="text-gray-400 text-base xl:text-lg whitespace-normal">Adding txAdmin to your server is completely free and super easy.</p>
         </div>
         <div>
