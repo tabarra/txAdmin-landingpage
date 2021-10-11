@@ -151,6 +151,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6 relative flex-1 px-4 sm:px-6">
                     <div className="flex flex-col space-y-2">
+                      <nav>
                             <a
                               className="text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                               href="https://github.com/tabarra/txAdmin/blob/master/README.md"
@@ -175,6 +176,7 @@ export default function Home() {
                            >
                               GitHub
                             </a>
+                            </nav>
                     </div>
                   </div>
                 </div>
@@ -209,9 +211,11 @@ export default function Home() {
             <MenuAlt4Icon className="h-6 w-6 text-gray-900" />
             </button>
             <div className="hidden md:block space-x-1 text-base text-white font-medium">
+              <nav>
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin/blob/master/README.md">Documentation</a>
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://discord.gg/yWxjt9zPWR">Discord</a>
                 <a className="duration-200 ease-in-out hover:bg-gray-800 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin">GitHub</a>
+              </nav>
             </div>
         </div>
         <div className="flex my-40 space-y-96">
