@@ -215,7 +215,7 @@ export default function Home() {
               </nav>
         </div>
         <div className="flex my-40 space-y-96">
-            <div className="flex flex-col mx-auto w-10/12 space-y-4 text-center">
+            <div className="flex flex-col mx-auto w-11/12 space-y-4 text-center">
             <h1 className="text-white font-bold text-4xl">Remotely Manage & Monitor your GTA5 FiveM Server</h1>
             <p className="text-white text-xl">txAdmin is a <span className="font-bold">completely free to use</span>, full-featured <span className="font-bold">web panel</span> to Manage & Monitor your FiveM Server remotely, in use by over <span className="font-bold">TEN thousand servers</span> worldwide at any given time.</p>
   <div className="space-y-10">
