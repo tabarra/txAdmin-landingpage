@@ -72,10 +72,10 @@ export default function Home() {
                   <a href="https://zap-hosting.com/txadmin2" target="_blank" rel="noopener">
                     <button
                       type="button"
-                      className="w-full group inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-green-500 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      className="w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-medium hover:bg-green-700 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
                     >
                       Get started with Zap Hosting
-                      <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 sm:h-5 sm:h-5 ml-2" />
+                      <ArrowRightIcon className="group-hover:animate-bounce-x text-black h-6 h-6 sm:h-5 sm:h-5 ml-2" />
                     </button>
                   </a>
                   <a href="https://docs.fivem.net/docs/server-manual/setting-up-a-server/" target="_blank" rel="noopener">
