@@ -62,14 +62,14 @@ export default function Home() {
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-400">
-                          Launching your server with <a href="https://zap-hosting.com/txadmin2" target="_blank" className="text-green-300 font-bold">Zap Hosting</a> is the fastest and easiest route to get started with txAdmin, no skill required to get your pre-configured txAdmin-enabled server up and running in moments.
+                          Launching your server with <a href="https://zap-hosting.com/txadmin2" target="_blank" className="text-green-300 font-bold" rel="noopener">Zap Hosting</a> is the fastest and easiest route to get started with txAdmin, no skill required to get your pre-configured txAdmin-enabled server up and running in moments.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                  <a href="https://zap-hosting.com/txadmin2" target="_blank">
+                  <a href="https://zap-hosting.com/txadmin2" target="_blank" rel="noopener">
                     <button
                       type="button"
                       className="w-full group inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-green-500 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
@@ -78,7 +78,7 @@ export default function Home() {
                       <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 sm:h-5 sm:h-5 ml-2" />
                     </button>
                   </a>
-                  <a href="https://docs.fivem.net/docs/server-manual/setting-up-a-server/" target="_blank">
+                  <a href="https://docs.fivem.net/docs/server-manual/setting-up-a-server/" target="_blank" rel="noopener">
                     <button
                       type="button"
                       className="mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
@@ -155,6 +155,7 @@ export default function Home() {
                           className="text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           href="https://github.com/tabarra/txAdmin/blob/master/README.md"
                           target="_blank"
+                          rel="noopener"
                         >
                           Documentation
                         </a>
@@ -162,6 +163,7 @@ export default function Home() {
                           className="text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           href="https://discord.gg/yWxjt9zPWR"
                           target="_blank"
+                          rel="noopener"
                         >
                           Discord
                         </a>
@@ -169,6 +171,7 @@ export default function Home() {
                           className="text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           href="https://github.com/tabarra/txAdmin"
                           target="_blank"
+                          rel="noopener"
                         >
                           GitHub
                         </a>
@@ -206,9 +209,9 @@ export default function Home() {
           <MenuAlt4Icon className="h-6 w-6 text-gray-900" />
         </button>
         <nav className="hidden md:block space-x-1 text-base text-white font-medium">
-          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin/blob/master/README.md" target="_blank">Documentation</a>
-          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://discord.gg/yWxjt9zPWR" target="_blank">Discord</a>
-          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin" target="_blank">GitHub</a>
+          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin/blob/master/README.md" target="_blank" rel="noopener">Documentation</a>
+          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://discord.gg/yWxjt9zPWR" target="_blank" rel="noopener">Discord</a>
+          <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin" target="_blank" rel="noopener">GitHub</a>
         </nav>
       </div>
       <div className="flex my-40 space-y-96">

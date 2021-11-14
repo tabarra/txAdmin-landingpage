@@ -4,15 +4,15 @@ export default function Footer() {
       <div className="flex mx-auto justify-center space-x-2 text-base text-white font-medium">
         <nav>
           <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
-            href="https://github.com/tabarra/txAdmin/blob/master/README.md" target="_blank">
+            href="https://github.com/tabarra/txAdmin/blob/master/README.md" target="_blank" rel="noopener">
             Documentation
           </a>
           <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
-            href="https://discord.gg/yWxjt9zPWR" target="_blank">
+            href="https://discord.gg/yWxjt9zPWR" target="_blank" rel="noopener">
             Discord
           </a>
           <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
-            href="https://github.com/tabarra/txAdmin" target="_blank">
+            href="https://github.com/tabarra/txAdmin" target="_blank" rel="noopener">
             GitHub
           </a>
         </nav>
