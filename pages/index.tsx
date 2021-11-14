@@ -11,28 +11,27 @@ const Features = dynamic(() => import('../components/Features'))
 const FooterCTA = dynamic(() => import('../components/FooterCTA'))
 const Footer = dynamic(() => import('../components/Footer'))
 
-export default function Home() {  
+export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <body className="flex flex-col min-h-screen bg-gray-800">
-  <header className="bg-hero bg-cover">
-  <Header />
-  </header>
-  <div className="space-y-32 bg-gray-900">
-  <main className="flex-grow space-y-12">
-  <ZAPCTA />
-  <div className="space-y-32">
-  <About />
-  <Features />
-  </div>
-  </main>
-  <footer className="bg-gray-800">
-  <FooterCTA />
-  <Footer />
-  </footer>
-  </div>
-</body>
+        <header className="bg-hero bg-cover">
+          <Header />
+        </header>
+        <div className="space-y-32 bg-gray-900">
+          <main className="flex-grow space-y-12">
+            <ZAPCTA />
+            <div className="space-y-32">
+              <About />
+              <Features />
+            </div>
+          </main>
+          <footer className="bg-gray-800">
+            <FooterCTA />
+            <Footer />
+          </footer>
+        </div>
+      </body>
     </motion.div>
-    
-      )
-     };
+  )
+};
