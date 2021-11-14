@@ -3,9 +3,18 @@ export default function Footer() {
     <div className="bg-gray-800 text-gray-300 px-6 lg:px-8 py-10">
       <div className="flex mx-auto justify-center space-x-2 text-base text-white font-medium">
         <nav>
-          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin/blob/master/README.md">Documentation</a>
-          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg" href="https://discord.gg/yWxjt9zPWR">Discord</a>
-          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin">GitHub</a>
+          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
+            href="https://github.com/tabarra/txAdmin/blob/master/README.md" target="_blank">
+            Documentation
+          </a>
+          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
+            href="https://discord.gg/yWxjt9zPWR" target="_blank">
+            Discord
+          </a>
+          <a className="duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg"
+            href="https://github.com/tabarra/txAdmin" target="_blank">
+            GitHub
+          </a>
         </nav>
       </div>
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 border-t-2 border-gray-700 pt-3">
