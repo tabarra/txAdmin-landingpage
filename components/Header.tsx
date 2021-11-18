@@ -72,7 +72,7 @@ export default function Home() {
                   <a href="https://zap-hosting.com/txadmin2" target="_blank" rel="noopener">
                     <button
                       type="button"
-                      className="w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-medium hover:bg-green-700 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      className="w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-medium hover:bg-green-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
                     >
                       Get started with Zap Hosting
                       <ArrowRightIcon className="group-hover:animate-bounce-x text-black h-6 h-6 sm:h-5 sm:h-5 ml-2" />
@@ -214,7 +214,8 @@ export default function Home() {
           <a className="duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg" href="https://github.com/tabarra/txAdmin" target="_blank" rel="noopener">GitHub</a>
         </nav>
       </div>
-      <div className="flex my-40 space-y-96">
+      <div className="flex h-screen">
+        <div className="m-auto">
         <div className="flex flex-col mx-auto w-10/12 space-y-4 text-center">
           <h1 className="text-white font-bold text-4xl">Remotely Manage & Monitor your GTA5 FiveM Server</h1>
           <p className="text-white text-xl">txAdmin is a <span className="font-bold">completely free to use</span>, full-featured <span className="font-bold">web panel</span> to Manage & Monitor your FiveM Server remotely, in use by over <span className="font-bold">TEN thousand servers</span> worldwide at any given time.</p>
@@ -256,11 +257,11 @@ export default function Home() {
                   <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
                 </button>
               </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   )
 };
