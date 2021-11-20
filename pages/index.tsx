@@ -3,6 +3,7 @@ import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/700.css";
 import { motion } from "framer-motion";
+import Script from 'next/script'
 
 const Header = dynamic(() => import('../components/Header'))
 const ZAPCTA = dynamic(() => import('../components/ZAPCTA'))
@@ -13,27 +14,42 @@ const Footer = dynamic(() => import('../components/Footer'))
 
 export default function Home() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <body className="flex flex-col min-h-screen bg-gray-800">
-        <header className="bg-hero bg-cover h-screen">
-          <Header />
-        </header>
-        <div className="space-y-32 bg-gray-900">
-        <ZAPCTA />
-        <div className="space-y-32 bg-gray-900">
-          <main className="flex-grow space-y-12">
-            <div className="space-y-32">
-              <About />
-              <Features />
+    <>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <body className="flex flex-col min-h-screen bg-gray-800">
+          <header className="bg-hero bg-cover h-screen">
+            <Header />
+          </header>
+          <div className="space-y-32 bg-gray-900">
+          <ZAPCTA />
+          <div className="space-y-32 bg-gray-900">
+            <main className="flex-grow space-y-12">
+              <div className="space-y-32">
+                <About />
+                <Features />
+              </div>
+            </main>
             </div>
-          </main>
+            <footer className="bg-gray-800">
+              <FooterCTA />
+              <Footer />
+            </footer>
           </div>
-          <footer className="bg-gray-800">
-            <FooterCTA />
-            <Footer />
-          </footer>
-        </div>
-      </body>
-    </motion.div>
+        </body>
+      </motion.div>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-4DK3P3MG65"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-4DK3P3MG65');
+        `}
+      </Script>
+    </>
   )
 };
