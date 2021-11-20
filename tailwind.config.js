@@ -16,7 +16,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'hero': "url('/hero.jpg')",
+        'hero': "url('/hero.webp')",
         'snaily': "url('/snaily.svg')",
        }),
       colors: {

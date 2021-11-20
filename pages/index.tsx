@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic';
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/700.css";
-import { motion } from "framer-motion";
 import Script from 'next/script'
 
 const Header = dynamic(() => import('../components/Header'))
