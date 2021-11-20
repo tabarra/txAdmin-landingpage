@@ -5,10 +5,10 @@ import '@fontsource/montserrat/700.css';
 import Script from 'next/script';
 
 const Header = dynamic(() => import('../components/layout/Header'));
-const ZAPCTA = dynamic(() => import('../components/ZAPCTA'));
-const About = dynamic(() => import('../components/About'));
-const Features = dynamic(() => import('../components/Features'));
-const FooterCTA = dynamic(() => import('../components/FooterCTA'));
+const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
+const About = dynamic(() => import('../components/home/About'));
+const Features = dynamic(() => import('../components/home/Features'));
+const FooterCTA = dynamic(() => import('../components/home/FooterCTA'));
 const Footer = dynamic(() => import('../components/layout/Footer'));
 
 export default function Home() {
