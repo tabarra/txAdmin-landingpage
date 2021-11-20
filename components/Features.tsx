@@ -1,7 +1,7 @@
 import { Reveal } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
 import React from 'react';
-import { FeatureItemData, FeaturesData } from '../static/config';
+import { FeatureItemData, FeaturesData } from '../config/config';
 
 const slideup = keyframes`
   from {

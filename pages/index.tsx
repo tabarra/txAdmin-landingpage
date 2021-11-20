@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
-import "@fontsource/montserrat/400.css";
-import "@fontsource/montserrat/500.css";
-import "@fontsource/montserrat/700.css";
-import Script from 'next/script'
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/700.css';
+import Script from 'next/script';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/ZAPCTA'));
@@ -13,7 +13,7 @@ const Footer = dynamic(() => import('../components/layout/Footer'));
 
 export default function Home() {
   return (
-    <body className='flex flex-col min-h-screen bg-gray-800'>
+    <>
       <header className='bg-hero bg-cover h-screen'>
         <Header />
       </header>
@@ -45,6 +45,6 @@ export default function Home() {
           gtag('config', 'G-4DK3P3MG65');
         `}
       </Script>
-    </body>
+    </>
   );
 }

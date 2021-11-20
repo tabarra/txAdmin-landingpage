@@ -1,13 +1,11 @@
 import React from 'react';
 import { IconBaseProps } from 'react-icons';
-import {
-  AiFillLock,
-  FaServer,
-  FiSearch,
-  GoSettings,
-  HiChartBar,
-  MdPeople,
-} from 'react-icons/all';
+import { AiFillLock } from 'react-icons/ai';
+import { FiSearch } from 'react-icons/fi';
+import { FaServer } from 'react-icons/fa';
+import { HiChartBar } from 'react-icons/hi';
+import { MdPeople } from 'react-icons/md';
+import { GoSettings } from 'react-icons/go';
 
 export interface NavbarItemData {
   url: string;
