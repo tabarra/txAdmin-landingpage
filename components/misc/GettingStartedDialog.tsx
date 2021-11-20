@@ -2,16 +2,10 @@ import React, { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { ArrowRightIcon, HeartIcon, XIcon } from '@heroicons/react/outline';
 import { ThirdPartyURLs } from '../../config/config';
+import { useZapDialog } from '../../context/ZapDialogProvider';
 
-interface GettingStartedDialogProps {
-  isDialogOpen: boolean;
-  handleDialogClose: () => void;
-}
-
-export const GettingStartedDialog: React.FC<GettingStartedDialogProps> = ({
-  isDialogOpen,
-  handleDialogClose,
-}) => {
+export const GettingStartedDialog: React.FC = ({}) => {
+  const { isDialogOpen, setDialogOpen } = useZapDialog();
   const cancelButtonRef = useRef<HTMLButtonElement | null>(null);
 
   return (
@@ -20,7 +14,7 @@ export const GettingStartedDialog: React.FC<GettingStartedDialogProps> = ({
         as='div'
         className='fixed z-10 inset-0 overflow-y-auto'
         initialFocus={cancelButtonRef}
-        onClose={handleDialogClose}
+        onClose={() => setDialogOpen(false)}
       >
         <div className='flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0'>
           <Transition.Child
@@ -60,7 +54,7 @@ export const GettingStartedDialog: React.FC<GettingStartedDialogProps> = ({
                     <button
                       type='button'
                       className='hidden sm:block bg-gray-700 hover:bg-gray-600 transition duration-200 ease-in-out rounded-lg p-2'
-                      onClick={handleDialogClose}
+                      onClick={() => setDialogOpen(false)}
                       ref={cancelButtonRef}
                     >
                       <XIcon className='h-5 w-5 text-gray-300' />
@@ -113,7 +107,7 @@ export const GettingStartedDialog: React.FC<GettingStartedDialogProps> = ({
                 <button
                   type='button'
                   className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
-                  onClick={handleDialogClose}
+                  onClick={() => setDialogOpen(false)}
                   ref={cancelButtonRef}
                 >
                   Go Back
