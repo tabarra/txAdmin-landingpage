@@ -71,3 +71,8 @@ export const FeaturesData: FeatureItemData[] = [
       'Monitoring your server is easy with txAdmin. Featuring auto restarts on crash, live console, RAM/CPU monitoring, and more.',
   },
 ];
+
+export const ThirdPartyURLs = {
+  zapLink: 'https://zap-hosting.com/txadmin2',
+  serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server/',
+};
