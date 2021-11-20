@@ -8,8 +8,6 @@ const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
 const About = dynamic(() => import('../components/home/About'));
 const Features = dynamic(() => import('../components/home/Features'));
-const FooterCTA = dynamic(() => import('../components/home/FooterCTA'));
-const Footer = dynamic(() => import('../components/layout/Footer'));
 
 export default function Home() {
   return (
@@ -27,10 +25,6 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <footer className='bg-gray-800'>
-          <FooterCTA />
-          <Footer />
-        </footer>
       </div>
       <Script
         src='https://www.googletagmanager.com/gtag/js?id=G-4DK3P3MG65'

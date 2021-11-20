@@ -1,6 +1,5 @@
-import { ArrowRightIcon, HeartIcon, XIcon } from '@heroicons/react/outline';
-import React, { Fragment, useRef, useState } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import React, { useState } from 'react';
 import CountUp, { CountUpProps } from 'react-countup';
 import { MobileNavBar, DesktopNavBar } from './NavBar';
 import { GettingStartedDialog } from '../misc/GettingStartedDialog';

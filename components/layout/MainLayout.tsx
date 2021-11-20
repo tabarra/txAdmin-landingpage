@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
+import FooterCTA from '../home/FooterCTA';
+import Footer from './Footer';
 
 export const MainLayout: React.FC = ({ children }) => {
   return (
@@ -35,6 +37,10 @@ export const MainLayout: React.FC = ({ children }) => {
         <link rel='canonical' href='https://txadm.in' />
       </Head>
       <div className='flex flex-col min-h-screen bg-gray-800'>{children}</div>
+      <footer className='bg-gray-900 pt-16'>
+        <FooterCTA />
+        <Footer />
+      </footer>
     </>
   );
 };
