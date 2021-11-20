@@ -14,29 +14,25 @@ const Footer = dynamic(() => import('../components/Footer'))
 
 export default function Home() {
   return (
-    <>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <body className="flex flex-col min-h-screen bg-gray-800">
-          <header className="bg-hero bg-cover h-screen">
-            <Header />
-          </header>
-          <div className="space-y-32 bg-gray-900">
-          <ZAPCTA />
-          <div className="space-y-32 bg-gray-900">
-            <main className="flex-grow space-y-12">
-              <div className="space-y-32">
-                <About />
-                <Features />
-              </div>
-            </main>
-            </div>
-            <footer className="bg-gray-800">
-              <FooterCTA />
-              <Footer />
-            </footer>
+    <body className="flex flex-col min-h-screen bg-gray-800">
+      <header className="bg-hero bg-cover h-screen">
+        <Header />
+      </header>
+      <div className="space-y-32 bg-gray-900">
+      <ZAPCTA />
+      <div className="space-y-32 bg-gray-900">
+        <main className="flex-grow space-y-12">
+          <div className="space-y-32">
+            <About />
+            <Features />
           </div>
-        </body>
-      </motion.div>
+        </main>
+        </div>
+        <footer className="bg-gray-800">
+          <FooterCTA />
+          <Footer />
+        </footer>
+      </div>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-4DK3P3MG65"
         strategy="afterInteractive"
@@ -50,6 +46,6 @@ export default function Home() {
           gtag('config', 'G-4DK3P3MG65');
         `}
       </Script>
-    </>
+    </body>
   )
 };
