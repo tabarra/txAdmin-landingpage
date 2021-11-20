@@ -5,6 +5,7 @@ import React, { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import CountUp, { CountUpProps } from 'react-countup';
 import { MenuAlt4Icon } from '@heroicons/react/outline';
+import { NavbarItemData, NavbarItems } from '../../static/config';
 
 interface StatCounterProps extends CountUpProps {
   labelSuffix?: string;
@@ -42,6 +43,28 @@ const StatCounter: React.FC<StatCounterProps> = ({
     </div>
   );
 };
+
+const MobileNavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+  <a
+    className='text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+    href={url}
+    target='_blank'
+    rel='noopener'
+  >
+    {name}
+  </a>
+);
+
+const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+  <a
+    className='duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg'
+    href={url}
+    target='_blank'
+    rel='noopener'
+  >
+    {name}
+  </a>
+);
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -220,30 +243,13 @@ export default function Home() {
                     </div>
                     <div className='mt-6 relative flex-1 px-4 sm:px-6'>
                       <nav className='flex flex-col space-y-2'>
-                        <a
-                          className='text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                          href='https://github.com/tabarra/txAdmin/blob/master/README.md'
-                          target='_blank'
-                          rel='noopener'
-                        >
-                          Documentation
-                        </a>
-                        <a
-                          className='text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                          href='https://discord.gg/yWxjt9zPWR'
-                          target='_blank'
-                          rel='noopener'
-                        >
-                          Discord
-                        </a>
-                        <a
-                          className='text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-                          href='https://github.com/tabarra/txAdmin'
-                          target='_blank'
-                          rel='noopener'
-                        >
-                          GitHub
-                        </a>
+                        {NavbarItems.map((item) => (
+                          <MobileNavItem
+                            url={item.url}
+                            name={item.name}
+                            key={item.name}
+                          />
+                        ))}
                       </nav>
                     </div>
                   </div>
@@ -297,30 +303,9 @@ export default function Home() {
           <MenuAlt4Icon className='h-6 w-6 text-gray-900' />
         </button>
         <nav className='hidden md:block space-x-1 text-base text-white font-medium'>
-          <a
-            className='duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg'
-            href='https://github.com/tabarra/txAdmin/blob/master/README.md'
-            target='_blank'
-            rel='noopener'
-          >
-            Documentation
-          </a>
-          <a
-            className='duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg'
-            href='https://discord.gg/yWxjt9zPWR'
-            target='_blank'
-            rel='noopener'
-          >
-            Discord
-          </a>
-          <a
-            className='duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg'
-            href='https://github.com/tabarra/txAdmin'
-            target='_blank'
-            rel='noopener'
-          >
-            GitHub
-          </a>
+          {NavbarItems.map((item) => (
+            <NavItem url={item.url} name={item.name} key={item.name} />
+          ))}
         </nav>
       </div>
       <div className='flex h-screen items-center justify-center'>
