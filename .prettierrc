@@ -1,0 +1,6 @@
+{
+  "printWidth": 90,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "jsxSingleQuote": true
+ }

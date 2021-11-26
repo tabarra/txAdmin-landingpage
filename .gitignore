@@ -2,6 +2,8 @@
 .next
 out/
 
+.idea
+
 # dotenv environment variables file (build for Zeit Now)
 .env
 .env.build
