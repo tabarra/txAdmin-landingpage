@@ -27,6 +27,18 @@ export const NavbarItems: NavbarItemData[] = [
   },
 ];
 
+export interface TxAdminStatsData {
+  servers: number;
+  admins: number;
+  bans: number;
+}
+
+export const TxAdminStats = <TxAdminStatsData> {
+  servers: 11,
+  admins: 42,
+  bans: 876,
+}
+
 export interface FeatureItemData {
   title: string;
   description: string;

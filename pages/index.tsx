@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { ArrowRightIcon } from '@heroicons/react/solid';
 import { StatCounter } from '../components/misc/StatCounter';
 import { useZapDialog } from '../context/ZapDialogProvider';
+import { TxAdminStats } from '../config/config';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
@@ -34,10 +35,10 @@ export default function Home() {
                     valueSuffix='servers'
                     valueUnit='k+'
                     start={1}
-                    end={10}
+                    end={TxAdminStats.servers}
                   />
-                  <StatCounter valueSuffix='admins' valueUnit='k+' end={34} />
-                  <StatCounter valueSuffix='bans' valueUnit='k+' end={793} />
+                  <StatCounter valueSuffix='admins' valueUnit='k+' end={TxAdminStats.admins} />
+                  <StatCounter valueSuffix='bans' valueUnit='k+' end={TxAdminStats.bans} />
                 </div>
                 <div className='flex flex-col space-y-2 justify-center md:flex-row md:space-y-0 md:space-x-2'>
                   <div>
