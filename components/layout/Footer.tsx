@@ -37,7 +37,7 @@ export default function Footer() {
           <p>txAdmin is licensed under the MIT license.</p>
         </div>
         <div className='text-sm space-y-4 mt-2 md:space-y-1 text-center md:text-left'>
-          <p>Page by Noodles#1234.</p>
+          <p>Page by <a target='_blank' rel='noopener' href='https://noodles.cool'>Noodles.</a></p>
         </div>
       </div>
     </div>
