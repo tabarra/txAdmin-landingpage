@@ -56,7 +56,7 @@ export default function FooterCallToAction() {
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-400">
-                          Launching your server with <a href="https://zap-hosting.com/txadmin2" className="text-green-300 font-bold" rel="noopener">Zap Hosting</a> is the fastest and easiest route to get started with txAdmin, no skill required to get your pre-configured txAdmin-enabled server up and running in moments.
+                          Launching your server with <a href="https://zap-hosting.com/txadmin2" className="text-green-300 font-bold" rel="noopener">ZAP-Hosting</a> is the fastest and easiest route to get started with txAdmin, no skill required to get your pre-configured txAdmin-enabled server up and running in moments.
                         </p>
                       </div>
                     </div>
@@ -68,7 +68,7 @@ export default function FooterCallToAction() {
                       type="button"
                       className="w-full group inline-flex justify-center text-black rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-medium hover:bg-green-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm"
                     >
-                      Get started with Zap Hosting
+                      Get started with ZAP-Hosting
                       <ArrowRightIcon className="group-hover:animate-bounce-x text-black h-6 h-6 sm:h-5 sm:h-5 ml-2" />
                     </button>
                   </a>
