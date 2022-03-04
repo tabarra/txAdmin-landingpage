@@ -1,11 +1,10 @@
 import dynamic from 'next/dynamic';
 import { ArrowRightIcon } from '@heroicons/react/solid';
 import { StatCounter } from '../components/misc/StatCounter';
-import { useZapDialog } from '../context/ZapDialogProvider';
+import { useZapDialog } from './ZapDialogProvider';
 import { TxAdminStats } from '../config/config';
 import Image from 'next/image';
 import AnimatedSnaily from '../public/txsnaily2_animated.png';
-import { MainNavBar } from '../components/NavBar/MainNavBar';
 import { Box } from '@chakra-ui/react';
 
 const Header = dynamic(() => import('../components/layout/Header'));
@@ -17,11 +16,11 @@ export default function Home() {
   const { setDialogOpen } = useZapDialog();
 
   return (
-    <>
+    <Box className='flex flex-col min-h-screen bg-gray-800'>
       <header className='bg-hero bg-cover h-screen relative'>
-        <div className='absolute bottom-8 right-8 w-64 h-64 opacity-0 lg:opacity-100 transition-opacity'>
+        <Box className='absolute bottom-8 right-8 w-64 h-64 opacity-0 lg:opacity-100 transition-opacity'>
           <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
-        </div>
+        </Box>
         <Header className='flex h-screen items-center justify-center'>
           <div className='m-auto max-w-3xl p-4'>
             <div className='flex flex-col space-y-4 align-middle text-center'>
@@ -95,6 +94,6 @@ export default function Home() {
           </main>
         </div>
       </div>
-    </>
+    </Box>
   );
 }

@@ -2,7 +2,7 @@ import React, { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { ArrowRightIcon, HeartIcon, XIcon } from '@heroicons/react/outline';
 import { ThirdPartyURLs } from '../../config/config';
-import { useZapDialog } from '../../context/ZapDialogProvider';
+import { useZapDialog } from '../../pages/ZapDialogProvider';
 
 export const GettingStartedDialog: React.FC = ({}) => {
   const { isDialogOpen, setDialogOpen } = useZapDialog();

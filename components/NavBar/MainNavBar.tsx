@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  Box,
-  Collapse,
-  Flex,
-  useColorModeValue,
-  useDisclosure,
-  IconButton,
-} from '@chakra-ui/react';
-import { MobileNavbar } from './MobileNavbar';
+import { Box, Flex, useColorModeValue, IconButton } from '@chakra-ui/react';
 import { DesktopNavbar } from './DesktopNavBar';
-import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
 import Image from 'next/image';
 import { GiHamburgerMenu } from '@react-icons/all-files/gi/GiHamburgerMenu';
-import Link from 'next/link';
 import txAdminLogo from '../../public/txadmin.png';
 import { useNavbarDrawerCtx } from './NavbarDrawerProvider';
+import { useRouter } from 'next/router';
 
 interface MainNavBarProps {
   hasBackground?: boolean;
@@ -23,6 +14,11 @@ interface MainNavBarProps {
 export const MainNavBar: React.FC<MainNavBarProps> = ({ hasBackground }) => {
   const { setIsOpen } = useNavbarDrawerCtx();
   const bg = useColorModeValue('white', 'gray.800');
+  const router = useRouter();
+
+  const handleGoHome = () => {
+    router.push('/');
+  };
 
   return (
     <Box py={3} position='absolute' width='100%'>
@@ -45,9 +41,9 @@ export const MainNavBar: React.FC<MainNavBarProps> = ({ hasBackground }) => {
           align='center'
         >
           <Box flexGrow={1}>
-            <Link href={'/'}>
+            <Box onClick={handleGoHome}>
               <Image src={txAdminLogo} width='150px' height='30px' alt='txadmin-logo' />
-            </Link>
+            </Box>
           </Box>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>

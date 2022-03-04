@@ -1,19 +1,7 @@
 import { Reveal } from 'react-awesome-reveal';
-import { keyframes } from '@emotion/react';
 import React from 'react';
 import { FeatureItemData, FeaturesData } from '../../config/config';
-
-const slideup = keyframes`
-  from {
-    opacity: 0;
-    transform: translate3d(-2px, 50px, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-`;
+import { slideUp } from '../../styles/keyframes';
 
 const FeatureItem: React.FC<FeatureItemData> = ({ title, description, FeatureIcon }) => {
   return (
@@ -30,7 +18,7 @@ const FeatureItem: React.FC<FeatureItemData> = ({ title, description, FeatureIco
 export default function Features() {
   return (
     <div>
-      <Reveal keyframes={slideup} triggerOnce={true}>
+      <Reveal keyframes={slideUp} triggerOnce={true}>
         <div className='text-center space-y-2 m-8'>
           <h3 className='text-3xl font-bold text-white'>
             Everything you need to manage your server
@@ -41,7 +29,7 @@ export default function Features() {
           </p>
         </div>
       </Reveal>
-      <Reveal keyframes={slideup} triggerOnce={true} delay={100}>
+      <Reveal keyframes={slideUp} triggerOnce={true} delay={100}>
         <div className='mx-auto justify-center text-center w-9/12 gap-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'>
           {FeaturesData.map((item) => (
             <FeatureItem

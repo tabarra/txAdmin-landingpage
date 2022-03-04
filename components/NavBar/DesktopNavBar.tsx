@@ -82,7 +82,9 @@ export const DesktopSubNav: React.FC<NavbarItemData> = ({ label, href, subLabel 
           >
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize={'sm'} color={'text.lightSecondary'}>
+            {subLabel}
+          </Text>
         </Box>
         <Flex
           transition={'all .3s ease'}

@@ -17,6 +17,27 @@ export interface NavbarItemData {
 
 export const NavbarItems: NavbarItemData[] = [
   {
+    label: 'txTracker',
+    children: [
+      {
+        label: 'Statistics',
+        subLabel:
+          'View a wide variety of metrics regarding the greater FiveM and txAdmin community!',
+        href: '/statistics',
+      },
+      {
+        label: 'Resources',
+        subLabel: 'See the most popular resources in the FiveM community!',
+        href: '/resources',
+      },
+      {
+        label: 'Servers',
+        subLabel: 'See the most popular servers in the FiveM community!',
+        href: '/servers',
+      },
+    ],
+  },
+  {
     label: 'Discord',
     children: [
       {

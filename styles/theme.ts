@@ -14,10 +14,12 @@ const colors = {
   bg: {
     dark: '#111827',
     light: '#192338',
+    lightest: '#1F2D4A',
     darkest: '#111827',
   },
   text: {
     primary: '#FFFFFF',
+    lightSecondary: '#E6E6E6',
     secondary: '#9CA3AF',
   },
 };

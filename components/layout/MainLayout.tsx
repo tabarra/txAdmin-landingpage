@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import React from 'react';
-import FooterCTA from '../home/FooterCTA';
-import Footer from './Footer';
+import dynamic from 'next/dynamic';
 
-export const MainLayout: React.FC = ({ children }) => {
+const FooterCTA = dynamic(() => import('../home/FooterCTA'), { ssr: false });
+const Footer = dynamic(() => import('./Footer'));
+
+export const MainLayout: React.FC<{ className?: string }> = ({ children, className }) => {
   return (
     <>
       <Head>
@@ -36,7 +38,7 @@ export const MainLayout: React.FC = ({ children }) => {
         <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />
         <link rel='canonical' href='https://txadm.in' />
       </Head>
-      <div className='flex flex-col min-h-screen bg-gray-800'>{children}</div>
+      {children}
       <footer className='bg-gray-900 pt-16'>
         <FooterCTA />
         <Footer />
