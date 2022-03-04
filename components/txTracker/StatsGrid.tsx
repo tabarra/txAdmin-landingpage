@@ -7,13 +7,12 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
   ResponsiveContainer,
   Line,
   Legend,
 } from 'recharts';
 
-function randomDate(start, end) {
+function randomDate(start: Date, end: Date) {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 

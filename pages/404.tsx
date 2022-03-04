@@ -22,7 +22,7 @@ const NotFoundPage: NextPage = () => {
               404 Page not found!
             </Text>
             <Text fontSize={'lg'} maxWidth={{ lg: '50vw' }}>
-              Uh oh! Looks like this page doesn't exist anymore or may have been moved.
+              Uh oh! Looks like this page does not exist anymore or may have been moved.
               Click the button below to safely return back to the homepage.
             </Text>
             <Button

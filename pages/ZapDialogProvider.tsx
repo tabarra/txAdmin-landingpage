@@ -10,7 +10,7 @@ const ZapDialogCtx = createContext<ZapDialogCtxValue | null>(null);
 // @ts-ignore
 export const useZapDialog = () => useContext<ZapDialogCtxValue>(ZapDialogCtx);
 
-export const ZapDialogProvider: React.FC = ({ children }) => {
+const ZapDialogProvider: React.FC = ({ children }) => {
   const [zapDialogOpen, setZapDialogOpen] = useState(false);
 
   const setDialogOpen = useCallback((bool) => {
@@ -28,3 +28,5 @@ export const ZapDialogProvider: React.FC = ({ children }) => {
     </ZapDialogCtx.Provider>
   );
 };
+
+export default ZapDialogProvider;

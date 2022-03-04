@@ -64,6 +64,7 @@ const Footer: React.FC = () => {
           <Stack spacing={6}>
             <Box>
               <Image
+                alt={'TXAdmin Logo'}
                 src={txAdminLogo}
                 color={useColorModeValue('gray.700', 'white')}
                 height={30}
