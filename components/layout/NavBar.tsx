@@ -3,26 +3,28 @@ import React, { Fragment } from 'react';
 import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline';
 import { NavbarItemData, NavbarItems } from '../../config/config';
 import Link from 'next/link';
+import Image from 'next/image';
+import txAdminLogo from '../../public/txadmin.png';
 
-const MobileNavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+const MobileNavItem: React.FC<NavbarItemData> = ({ label, href }) => (
   <a
     className='text-gray-300 font-bold bg-gray-800 hover:bg-gray-700 transition duration-200 ease-in-out hover:text-white px-3 py-2 rounded-md text-sm font-medium'
-    href={url}
+    href={href}
     target='_blank'
     rel='noopener'
   >
-    {name}
+    {label}
   </a>
 );
 
-const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+const NavItem: React.FC<NavbarItemData> = ({ label, href }) => (
   <a
     className='duration-200 ease-in-out hover:bg-indigo-900 p-2 rounded-lg'
-    href={url}
+    href={href}
     target='_blank'
     rel='noopener'
   >
-    {name}
+    {label}
   </a>
 );
 
@@ -87,7 +89,11 @@ export const MobileNavBar: React.FC<MobileNavBarProps> = ({ onClose, isOpen }) =
                   <div className='mt-6 relative flex-1 px-4 sm:px-6'>
                     <nav className='flex flex-col space-y-2'>
                       {NavbarItems.map((item) => (
-                        <MobileNavItem url={item.url} name={item.name} key={item.name} />
+                        <MobileNavItem
+                          href={item.href}
+                          label={item.label}
+                          key={item.label}
+                        />
                       ))}
                     </nav>
                   </div>
@@ -109,7 +115,9 @@ export const DesktopNavBar: React.FC<RegularNavBarProps> = ({ handleOpenMobile }
   <div className='flex justify-between mx-5 md:mx-0 md:justify-around mt-5'>
     <div>
       <Link href='/' passHref>
-        <a className='font-bold text-lg select-none text-white'>txAdmin</a>
+        <a>
+          <Image src={txAdminLogo} aria-label='txadmin-logo' width={150} height={30} />
+        </a>
       </Link>
     </div>
     <button
@@ -119,9 +127,9 @@ export const DesktopNavBar: React.FC<RegularNavBarProps> = ({ handleOpenMobile }
     >
       <MenuAlt4Icon className='h-6 w-6 text-gray-900' />
     </button>
-    <nav className='hidden md:block space-x-1 text-base text-white font-medium'>
+    <nav className='hidden md:flex space-x-1 text-base text-white font-medium'>
       {NavbarItems.map((item) => (
-        <NavItem url={item.url} name={item.name} key={item.name} />
+        <NavItem href={item.href} label={item.label} key={item.label} />
       ))}
     </nav>
   </div>

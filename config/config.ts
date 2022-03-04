@@ -8,22 +8,36 @@ import { MdPeople } from 'react-icons/md';
 import { GoSettings } from 'react-icons/go';
 
 export interface NavbarItemData {
-  url: string;
-  name: string;
+  label: string;
+  subLabel?: string;
+  children?: NavbarItemData[];
+  href?: string;
+  icon?: React.ComponentType<IconBaseProps>;
 }
 
 export const NavbarItems: NavbarItemData[] = [
   {
-    name: 'Discord',
-    url: 'https://discord.gg/yWxjt9zPWR',
+    label: 'Discord',
+    children: [
+      {
+        label: 'test',
+        subLabel: 'testing',
+        href: '#',
+      },
+      {
+        label: 'Howdy!',
+        subLabel: 'Nice',
+        href: '#',
+      },
+    ],
   },
   {
-    name: 'Documentation',
-    url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    label: 'Documentation',
+    href: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
   },
   {
-    name: 'GitHub',
-    url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    label: 'GitHub',
+    href: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
   },
 ];
 
@@ -33,11 +47,11 @@ export interface TxAdminStatsData {
   bans: number;
 }
 
-export const TxAdminStats = <TxAdminStatsData> {
+export const TxAdminStats = <TxAdminStatsData>{
   servers: 14,
   admins: 42,
   bans: 876,
-}
+};
 
 export interface FeatureItemData {
   title: string;

@@ -5,6 +5,8 @@ import { useZapDialog } from '../context/ZapDialogProvider';
 import { TxAdminStats } from '../config/config';
 import Image from 'next/image';
 import AnimatedSnaily from '../public/txsnaily2_animated.png';
+import { MainNavBar } from '../components/NavBar/MainNavBar';
+import { Box } from '@chakra-ui/react';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
@@ -16,12 +18,12 @@ export default function Home() {
 
   return (
     <>
-      <header className='bg-hero bg-cover h-screen'>
-        <Header>
+      <header className='bg-hero bg-cover h-screen relative'>
+        <div className='absolute bottom-8 right-8 w-64 h-64 opacity-0 lg:opacity-100 transition-opacity'>
+          <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
+        </div>
+        <Header className='flex h-screen items-center justify-center'>
           <div className='m-auto max-w-3xl p-4'>
-            <div className='absolute bottom-8 right-16 w-64 h-64 opacity-0 lg:opacity-100 transition-opacity'>
-              <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
-            </div>
             <div className='flex flex-col space-y-4 align-middle text-center'>
               <h1 className='text-white font-bold text-2xl lg:text-4xl min-w-0'>
                 Remotely Manage & Monitor your GTA5 FiveM Server
