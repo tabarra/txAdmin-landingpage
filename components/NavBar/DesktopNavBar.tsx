@@ -12,6 +12,7 @@ import {
 import React from 'react';
 import { NavbarItemData, NavbarItems } from '../../config/config';
 import { BiChevronRight } from '@react-icons/all-files/bi/BiChevronRight';
+import { ChakraNextLink } from '../misc/NextLink';
 
 export const DesktopNavbar: React.FC = () => {
   const linkColor = useColorModeValue('white', 'gray.200');
@@ -64,7 +65,7 @@ export const DesktopNavbar: React.FC = () => {
 
 export const DesktopSubNav: React.FC<NavbarItemData> = ({ label, href, subLabel }) => {
   return (
-    <Link
+    <ChakraNextLink
       href={href}
       role={'group'}
       display={'block'}
@@ -98,6 +99,6 @@ export const DesktopSubNav: React.FC<NavbarItemData> = ({ label, href, subLabel 
           <BiChevronRight color={'pink.400'} size={'3em'} />
         </Flex>
       </Stack>
-    </Link>
+    </ChakraNextLink>
   );
 };

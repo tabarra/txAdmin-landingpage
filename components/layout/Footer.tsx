@@ -9,12 +9,13 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  Divider,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import txAdminLogo from '../../public/txadmin.png';
+
 import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram';
 import { FaDiscord } from '@react-icons/all-files/fa/FaDiscord';
+import { ThirdPartyURLs } from '../../config/config';
 
 const SocialButton = ({
   children,
@@ -39,7 +40,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: 'blackAlpha.200',
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -66,19 +67,16 @@ const Footer: React.FC = () => {
               <Image
                 alt={'TXAdmin Logo'}
                 src={txAdminLogo}
-                color={useColorModeValue('gray.700', 'white')}
+                color={'text.secondary'}
                 height={30}
                 width={150}
               />
             </Box>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton
-                label={'Instagram'}
-                href={'https://www.instagram.com/txadmin/'}
-              >
+              <SocialButton label={'Instagram'} href={ThirdPartyURLs.instagram}>
                 <FaInstagram />
               </SocialButton>
-              <SocialButton label={'Discord'} href={'https://discord.gg/yWxjt9zPWR'}>
+              <SocialButton label={'Discord'} href={ThirdPartyURLs.discord}>
                 <FaDiscord />
               </SocialButton>
             </Stack>
@@ -92,11 +90,9 @@ const Footer: React.FC = () => {
           </Stack>
           <Stack align={'flex-start'} color='text.secondary'>
             <ListHeader>txAdmin</ListHeader>
-            <Link href={'https://github.com/tabarra/txAdmin/'}>GitHub Repository</Link>
-            <Link href={'https://github.com/tabarra/txAdmin/blob/master/README.md'}>
-              Documentation
-            </Link>
-            <Link href={'https://discord.gg/yWxjt9zPWR'}>Discord</Link>
+            <Link href={ThirdPartyURLs.githubLink}>GitHub Repository</Link>
+            <Link href={ThirdPartyURLs.documentationPage}>Documentation</Link>
+            <Link href={ThirdPartyURLs.discord}>Discord</Link>
           </Stack>
         </SimpleGrid>
       </Container>

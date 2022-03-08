@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Flex, Stack, Icon, Collapse, Text, useDisclosure } from '@chakra-ui/react';
 import { noop } from '@chakra-ui/utils';
 import { FiChevronDown } from 'react-icons/fi';
@@ -7,11 +7,9 @@ import { useRouter } from 'next/router';
 import { ChakraNextLink } from '../misc/NextLink';
 
 export const MobileNavbarItem: React.FC<NavbarItemData> = ({
-  subLabel,
   href,
   subMenuChildren,
   label,
-  icon,
 }) => {
   const { isOpen, onToggle } = useDisclosure();
   const { pathname } = useRouter();

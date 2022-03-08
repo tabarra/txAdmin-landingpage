@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Box,
-  Grid,
   GridItem,
   HStack,
   Icon,
@@ -20,6 +19,8 @@ import {
   Line,
   Legend,
 } from 'recharts';
+import { FaHammer, FaServer, FaIdBadge } from 'react-icons/fa';
+import { FaPeopleCarry } from '@react-icons/all-files/fa/FaPeopleCarry';
 
 function randomDate(start: Date, end: Date) {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
@@ -38,13 +39,6 @@ const getFakeData = (num: number) => {
   return data;
 };
 
-const fakeTxData = [
-  {
-    time: '30/01/2020',
-    amnt: 32000,
-  },
-];
-
 export const StatsGrid: React.FC = () => {
   const { colors } = useTheme();
 
@@ -59,7 +53,7 @@ export const StatsGrid: React.FC = () => {
           <HStack spacing={3} mb={3}>
             <Icon as={FaChartLine} w={25} h={25} color={'primary.main'} />
             <Text fontSize='lg' color='text.secondary' fontWeight='300'>
-              Overview Graph
+              txAdmin Servers
             </Text>
           </HStack>
           <ResponsiveContainer height='95%'>
@@ -89,38 +83,38 @@ export const StatsGrid: React.FC = () => {
       </GridItem>
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
-        cardTitle='Total Transactions'
+        CardIcon={FaPeopleCarry}
+        cardTitle='txAdmin Players'
         value={32000}
       />
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
-        cardTitle='Total Bans'
+        CardIcon={FaServer}
+        cardTitle='txAdmin Servers'
         value={50000}
       />
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
-        cardTitle='Total Bans'
+        CardIcon={FaIdBadge}
+        cardTitle='Registered Admins'
         value={90000}
       />
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
+        CardIcon={FaChartLine}
         cardTitle='Total Bans'
         value={80000}
       />
 
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
+        CardIcon={FaChartLine}
         cardTitle='Total Bans'
         value={90000}
       />
       <StatsCard
         lastRefreshed={'22m ago'}
-        cardIcon={<FaChartLine />}
+        CardIcon={FaHammer}
         cardTitle='Total Bans'
         value={90000}
       />

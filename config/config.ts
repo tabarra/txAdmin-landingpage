@@ -15,6 +15,15 @@ export interface NavbarItemData {
   icon?: React.ComponentType<IconBaseProps>;
 }
 
+export const ThirdPartyURLs = {
+  zapLink: 'https://zap-hosting.com/txadmin2',
+  githubLink: 'https://github.com/tabarra/txadmin/',
+  documentationPage: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+  serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server/',
+  discord: 'https://discord.gg/yWxjt9zPWR',
+  instagram: 'https://www.instagram.com/txadmin/',
+};
+
 export const NavbarItems: NavbarItemData[] = [
   {
     label: 'txTracker',
@@ -39,26 +48,15 @@ export const NavbarItems: NavbarItemData[] = [
   },
   {
     label: 'Discord',
-    subMenuChildren: [
-      {
-        label: 'test',
-        subLabel: 'testing',
-        href: '#',
-      },
-      {
-        label: 'Howdy!',
-        subLabel: 'Nice',
-        href: '#',
-      },
-    ],
+    href: ThirdPartyURLs.documentationPage,
   },
   {
     label: 'Documentation',
-    href: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    href: ThirdPartyURLs.documentationPage,
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    href: ThirdPartyURLs.githubLink,
   },
 ];
 
@@ -118,8 +116,3 @@ export const FeaturesData: FeatureItemData[] = [
       'Monitoring your server is easy with txAdmin. Featuring auto restarts on crash, live console, RAM/CPU monitoring, and more.',
   },
 ];
-
-export const ThirdPartyURLs = {
-  zapLink: 'https://zap-hosting.com/txadmin2',
-  serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server/',
-};
