@@ -52,10 +52,10 @@ export const MainNavBar: React.FC<MainNavBarProps> = ({ hasBackground }) => {
 
           <Flex justify={'flex-end'} display={{ base: 'flex', md: 'none' }}>
             <IconButton
-              bg={useColorModeValue('gray.200', 'gray.900')}
+              color={'text.secondary'}
               onClick={() => setIsOpen(true)}
               icon={<GiHamburgerMenu size={'1.5em'} />}
-              variant={'outline'}
+              variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
           </Flex>

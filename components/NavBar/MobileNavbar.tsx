@@ -1,23 +1,15 @@
-import React from 'react';
-import {
-  Flex,
-  Stack,
-  useColorModeValue,
-  useDisclosure,
-  Icon,
-  Collapse,
-  Text,
-  Link,
-} from '@chakra-ui/react';
-import NextLink from 'next/link';
+import React, { useState } from 'react';
+import { Flex, Stack, Icon, Collapse, Text, useDisclosure } from '@chakra-ui/react';
 import { noop } from '@chakra-ui/utils';
 import { FiChevronDown } from 'react-icons/fi';
 import { NavbarItemData, NavbarItems } from '../../config/config';
 import { useRouter } from 'next/router';
+import { ChakraNextLink } from '../misc/NextLink';
 
 export const MobileNavbarItem: React.FC<NavbarItemData> = ({
-  children,
+  subLabel,
   href,
+  subMenuChildren,
   label,
   icon,
 }) => {
@@ -29,11 +21,11 @@ export const MobileNavbarItem: React.FC<NavbarItemData> = ({
   const linkColor = currentPageIsPath ? 'text.primary' : 'text.secondary';
 
   return (
-    <Stack spacing={4} onClick={children ? onToggle : noop}>
+    <Stack spacing={4} onClick={subMenuChildren ? onToggle : noop}>
       <Flex
         py={2}
         as='a'
-        href={href ?? '#'}
+        href={href}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -43,7 +35,7 @@ export const MobileNavbarItem: React.FC<NavbarItemData> = ({
         <Text color={linkColor} fontWeight={currentPageIsPath ? 'bold' : 'unset'}>
           {label}
         </Text>
-        {children && (
+        {subMenuChildren && (
           <Icon
             as={FiChevronDown}
             transition={'all .25s ease-in-out'}
@@ -53,21 +45,25 @@ export const MobileNavbarItem: React.FC<NavbarItemData> = ({
           />
         )}
       </Flex>
-
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
           mt={2}
           pl={4}
           borderLeft={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          borderColor={'gray.700'}
           align={'start'}
         >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href} as={NextLink}>
+          {subMenuChildren &&
+            subMenuChildren.map((child) => (
+              <ChakraNextLink
+                key={child.label}
+                py={2}
+                href={child.href}
+                color={'text.secondary'}
+              >
                 {child.label}
-              </Link>
+              </ChakraNextLink>
             ))}
         </Stack>
       </Collapse>
@@ -78,8 +74,14 @@ export const MobileNavbarItem: React.FC<NavbarItemData> = ({
 export const MobileNavbar: React.FC = ({}) => (
   <Stack>
     <MobileNavbarItem label={'Home'} href={'/'} key={'home'} />
-    {NavbarItems.map(({ label, href }) => (
-      <MobileNavbarItem href={href} label={label} key={label} />
+    {NavbarItems.map(({ label, href, subMenuChildren, subLabel }) => (
+      <MobileNavbarItem
+        href={href}
+        label={label}
+        key={label}
+        subLabel={subLabel}
+        subMenuChildren={subMenuChildren}
+      />
     ))}
   </Stack>
 );

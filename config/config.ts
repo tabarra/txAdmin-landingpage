@@ -10,7 +10,7 @@ import { GoSettings } from 'react-icons/go';
 export interface NavbarItemData {
   label: string;
   subLabel?: string;
-  children?: NavbarItemData[];
+  subMenuChildren?: NavbarItemData[];
   href?: string;
   icon?: React.ComponentType<IconBaseProps>;
 }
@@ -18,7 +18,7 @@ export interface NavbarItemData {
 export const NavbarItems: NavbarItemData[] = [
   {
     label: 'txTracker',
-    children: [
+    subMenuChildren: [
       {
         label: 'Statistics',
         subLabel:
@@ -39,7 +39,7 @@ export const NavbarItems: NavbarItemData[] = [
   },
   {
     label: 'Discord',
-    children: [
+    subMenuChildren: [
       {
         label: 'test',
         subLabel: 'testing',

@@ -39,7 +39,7 @@ export const DesktopNavbar: React.FC = () => {
               </Link>
             </PopoverTrigger>
 
-            {navItem.children && (
+            {navItem.subMenuChildren && (
               <PopoverContent
                 border={0}
                 boxShadow={'xl'}
@@ -49,7 +49,7 @@ export const DesktopNavbar: React.FC = () => {
                 minW={'sm'}
               >
                 <Stack>
-                  {navItem.children.map((child) => (
+                  {navItem.subMenuChildren.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>
