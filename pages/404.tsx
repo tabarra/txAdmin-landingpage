@@ -1,5 +1,14 @@
 import { NextPage } from 'next';
-import { Button, Center, Grid, GridItem, Stack, Text } from '@chakra-ui/react';
+import {
+  Button,
+  Center,
+  Container,
+  Grid,
+  GridItem,
+  SimpleGrid,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import AnimatedSnaily from '../public/txsnaily2_animated.png';
 import Image from 'next/image';
@@ -9,10 +18,17 @@ const NotFoundPage: NextPage = () => {
   const { push } = useRouter();
 
   return (
-    <Center height='100vh' width='100vw' color={'white'} backgroundImage={'./hero.webp'}>
-      <Grid
-        templateColumns={{ md: 'repeat(2, 1fr)', base: 'repeat(1, 1fr)' }}
-        width='100%'
+    <Center
+      height='100vh'
+      width='100vw'
+      color={'white'}
+      backgroundImage={'./hero.webp'}
+      px={5}
+    >
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        templateColumns={{ md: '2fr 1fr', base: 'repeat(1, 1fr)' }}
+        width='75%'
         m={{ sm: 5, md: 20 }}
         gap={10}
       >
@@ -40,7 +56,7 @@ const NotFoundPage: NextPage = () => {
         <GridItem>
           <Image src={AnimatedSnaily} alt='Snaily' width={300} height={300} />
         </GridItem>
-      </Grid>
+      </SimpleGrid>
     </Center>
   );
 };
