@@ -58,8 +58,8 @@ const ListHeader: React.FC = ({ children }) => {
 
 const Footer: React.FC = () => {
   return (
-    <Box bg={'bg.darkest'} color={'gray.200'}>
-      <Container as={Stack} maxW={'container.lg'} py={10}>
+    <Box bg={'bg.darkest'} color={'gray.200'} mx={5}>
+      <Container as={Stack} maxW={{ base: 'container.lg', lg: 'container.xl' }} py={10}>
         <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr' }} spacing={8}>
           <Stack spacing={6}>
             <Box>
@@ -82,9 +82,13 @@ const Footer: React.FC = () => {
                 <FaDiscord />
               </SocialButton>
             </Stack>
-            <Text fontSize={'sm'} color='text.secondary'>
-              Copyright © 2019-2021 André Tabarra
-            </Text>
+            <Stack fontSize={'xs'}>
+              <Text color='text.secondary'>Copyright © 2019-2021 André Tabarra</Text>
+              <Text color='text.secondary'>
+                txAdmin is licensed under the MIT License
+              </Text>
+              <Text color='text.secondary'>Original Design by Noodles#1234</Text>
+            </Stack>
           </Stack>
           <Stack align={'flex-start'} color='text.secondary'>
             <ListHeader>txAdmin</ListHeader>
@@ -94,23 +98,8 @@ const Footer: React.FC = () => {
             </Link>
             <Link href={'https://discord.gg/yWxjt9zPWR'}>Discord</Link>
           </Stack>
-          <Stack align={'flex-start'} color='text.secondary'>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Legal</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Satus</Link>
-          </Stack>
         </SimpleGrid>
       </Container>
-      <Box display='flex' alignItems='center' flexDirection='column' width='100%'>
-        <Divider width='80%' my={5} color='text.secondary' />
-        <Text mb={5} color='text.secondary' fontSize={'sm'}>
-          Original Design by Noodles#1234 | Made with ❤️ by the txAdmin Team️ | txAdmin is
-          licensed under the MIT License
-        </Text>
-      </Box>
     </Box>
   );
 };
