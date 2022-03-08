@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex } from '@chakra-ui/react';
+import { Button, Flex, HStack } from '@chakra-ui/react';
 import {
   StatsPageEnum,
   useCurStatPageVal,
@@ -18,7 +18,7 @@ const TabControlItem: React.FC<TabControlItemProps> = ({ label, isActive, value 
   return (
     <Button
       boxShadow={isActive ? 'xl' : 'none'}
-      rounded={isActive ? 'xl' : 'none'}
+      rounded={'xl'}
       _hover={{ bg: 'bg.lightest' }}
       _active={{ bg: 'bg.lightest' }}
       onClick={() => setStatPage(value)}
@@ -36,7 +36,7 @@ export const TabControls: React.FC = () => {
   const curPage = useCurStatPageVal();
 
   return (
-    <Flex justifyContent='center' my={16} flexWrap='wrap'>
+    <HStack justifyContent='center' my={16} flexWrap='wrap'>
       <TabControlItem
         label='Overview'
         value={StatsPageEnum.Overview}
@@ -57,6 +57,6 @@ export const TabControls: React.FC = () => {
         value={StatsPageEnum.Others}
         isActive={curPage === StatsPageEnum.Others}
       />
-    </Flex>
+    </HStack>
   );
 };

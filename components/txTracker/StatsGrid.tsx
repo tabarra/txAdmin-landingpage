@@ -1,5 +1,14 @@
 import React from 'react';
-import { Box, Grid, GridItem, HStack, Icon, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Grid,
+  GridItem,
+  HStack,
+  Icon,
+  SimpleGrid,
+  Text,
+  useTheme,
+} from '@chakra-ui/react';
 import { StatsCard } from './StatsCard';
 import { FaChartLine } from '@react-icons/all-files/fa/FaChartLine';
 import {
@@ -37,64 +46,28 @@ const fakeTxData = [
 ];
 
 export const StatsGrid: React.FC = () => {
+  const { colors } = useTheme();
+
   return (
-    <Grid
-      gridTemplateRows={'repeat(3, 1fr)'}
-      gridTemplateColumns={'repeat(3, 1fr)'}
-      gap={5}
-    >
-      <GridItem gridColumn={1} gridColumnEnd={1}>
-        <StatsCard
-          lastRefreshed={'22m ago'}
-          cardIcon={<FaChartLine />}
-          cardTitle='Total Transactions'
-          value={32000}
-        />
-      </GridItem>
-      <GridItem>
-        <StatsCard
-          lastRefreshed={'22m ago'}
-          cardIcon={<FaChartLine />}
-          cardTitle='Total Bans'
-          value={50000}
-        />
-      </GridItem>
-      <GridItem>
-        <StatsCard
-          lastRefreshed={'22m ago'}
-          cardIcon={<FaChartLine />}
-          cardTitle='Total Bans'
-          value={90000}
-        />
-      </GridItem>
-      <GridItem>
-        <StatsCard
-          lastRefreshed={'22m ago'}
-          cardIcon={<FaChartLine />}
-          cardTitle='Total Bans'
-          value={80000}
-        />
-      </GridItem>
+    <SimpleGrid columns={{ base: 1, md: 3 }} gap={5}>
       <GridItem
-        gridColumnStart={2}
-        gridColumnEnd={4}
-        gridRowStart={2}
-        gridRowEnd={4}
-        maxH={300}
+        gridColumnStart={1}
+        gridColumnEnd={{ base: 2, md: 4 }}
+        maxH={{ base: 300, md: 400 }}
       >
         <Box rounded='xl' boxShadow='xl' bg={'bg.light'} p={5} height='100%' w='100%'>
           <HStack spacing={3} mb={3}>
             <Icon as={FaChartLine} w={25} h={25} color={'primary.main'} />
             <Text fontSize='lg' color='text.secondary' fontWeight='300'>
-              Some Graph
+              Overview Graph
             </Text>
           </HStack>
-          <ResponsiveContainer>
+          <ResponsiveContainer height='95%'>
             <LineChart
               data={getFakeData(30)}
               margin={{
-                top: 15,
-                right: 30,
+                top: 10,
+                right: 20,
                 left: 5,
                 bottom: 5,
               }}
@@ -107,21 +80,50 @@ export const StatsGrid: React.FC = () => {
               <Line
                 type='monotone'
                 dataKey='amnt'
-                stroke='#8884d8'
+                stroke={colors.primary.main}
                 activeDot={{ r: 8 }}
               />
             </LineChart>
           </ResponsiveContainer>
         </Box>
       </GridItem>
-      <GridItem>
-        <StatsCard
-          lastRefreshed={'22m ago'}
-          cardIcon={<FaChartLine />}
-          cardTitle='Total Bans'
-          value={90000}
-        />
-      </GridItem>
-    </Grid>
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Transactions'
+        value={32000}
+      />
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Bans'
+        value={50000}
+      />
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Bans'
+        value={90000}
+      />
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Bans'
+        value={80000}
+      />
+
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Bans'
+        value={90000}
+      />
+      <StatsCard
+        lastRefreshed={'22m ago'}
+        cardIcon={<FaChartLine />}
+        cardTitle='Total Bans'
+        value={90000}
+      />
+    </SimpleGrid>
   );
 };
