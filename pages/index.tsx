@@ -30,7 +30,7 @@ export default function Home() {
                 txAdmin is a <span className='font-bold'>completely free to use</span>,
                 full-featured <span className='font-bold'>web panel</span> to Manage &
                 Monitor your FiveM Server remotely, in use by over{' '}
-                <span className='font-bold'>TEN thousand servers</span> worldwide at any
+                <span className='font-bold'>{TxAdminStats.servers} thousand servers</span> worldwide at any
                 given time.
               </p>
               <div className='space-y-10'>

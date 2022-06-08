@@ -34,9 +34,9 @@ export interface TxAdminStatsData {
 }
 
 export const TxAdminStats = <TxAdminStatsData> {
-  servers: 14,
-  admins: 42,
-  bans: 876,
+  servers: 17,
+  admins: 61,
+  bans: 1160,
 }
 
 export interface FeatureItemData {
