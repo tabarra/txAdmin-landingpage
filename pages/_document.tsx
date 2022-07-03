@@ -10,7 +10,7 @@ class txAdmin extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body>
+        <body className="bg-neutral-900">
           <Main />
           <NextScript />
         </body>

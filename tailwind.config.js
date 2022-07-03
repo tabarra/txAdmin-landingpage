@@ -21,8 +21,11 @@ module.exports = {
        }),
       colors: {
         'content': '#192338',
-        'cta': '#0c111c',
+        'cta': '#121212',
+        'dialog-btn-hvr': '#1c1c1c',
+        'dialog-btn-2': '#282828',
         'txgreen': '#45E696',
+        'fivem-red': '#f40552',
       },
       fontFamily: {
         sans: ['"Montserrat"', 'sans-serif']

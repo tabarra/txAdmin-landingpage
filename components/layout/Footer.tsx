@@ -1,45 +1,38 @@
+import { NavbarItemData, NavbarItems } from '../../config/config';
+import Link from 'next/link';
+
+const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+  <a
+    className='duration-200 ease-in-out text-white hover:text-gray-400 text-sm font-medium'
+    href={url}
+    target='_blank'
+    rel='noopener'
+  >
+    {name}
+  </a>
+);
+
 export default function Footer() {
   return (
-    <div className='bg-gray-800 text-gray-300 px-6 lg:px-8 py-10'>
-      <div className='flex mx-auto justify-center space-x-2 text-base text-white font-medium'>
-        <nav>
-          <a
-            className='duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg'
-            href='https://github.com/tabarra/txAdmin/blob/master/README.md'
-            target='_blank'
-            rel='noopener'
-          >
-            Documentation
-          </a>
-          <a
-            className='duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg'
-            href='https://discord.gg/yWxjt9zPWR'
-            target='_blank'
-            rel='noopener'
-          >
-            Discord
-          </a>
-          <a
-            className='duration-200 ease-in-out hover:bg-gray-700 p-2 rounded-lg'
-            href='https://github.com/tabarra/txAdmin'
-            target='_blank'
-            rel='noopener'
-          >
-            GitHub
-          </a>
+    <footer className="bg-neutral-800">
+      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <div className="mb-6 text-center">
+        <Link href="/">
+              <a>
+              <span className="sr-only">txAdmin Logo</span>
+              <span className="text-green-400 font-semibold text-lg">txAdmin</span>
+              </a>
+            </Link>
+        </div>
+        <nav className="-mx-5 -my-2 flex flex-wrap justify-center space-x-3" aria-label="Footer">
+        {NavbarItems.map((item) => (
+                        <NavItem url={item.url} name={item.name} key={item.name} />
+                      ))}
         </nav>
+        <p className="mt-7 text-center text-base text-gray-400">txAdmin is licensed under the MIT license.</p>
+        <p className="text-center text-base text-gray-400">Page Design by Noodles#1234</p>
+        <p className="text-center text-base text-gray-400">&copy; 2019-2021 André Tabarra</p>
       </div>
-      <div className='max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 border-t-2 border-gray-700 pt-3'>
-        <div className='text-sm space-y-4 mt-2 md:space-y-1 text-center md:text-left'>
-          <p>
-            Copyright &copy; 2019-2021 <strong>André Tabarra</strong>.
-          </p>
-          <p>txAdmin is licensed under the MIT license.</p>
-        </div>
-        <div className='text-sm space-y-4 mt-2 md:space-y-1 text-center md:text-left'>
-          <p>Page by Noodles#1234.</p>
-        </div>
-      </div>
-    </div>
-  );
+    </footer>
+  )
 }

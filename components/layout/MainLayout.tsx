@@ -36,8 +36,8 @@ export const MainLayout: React.FC = ({ children }) => {
         <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />
         <link rel='canonical' href='https://txadm.in' />
       </Head>
-      <div className='flex flex-col min-h-screen bg-gray-800'>{children}</div>
-      <footer className='bg-gray-900 pt-16'>
+      <div className='flex flex-col min-h-screen bg-neutral-900'>{children}</div>
+      <footer className='bg-neutral-900 pt-16'>
         <FooterCTA />
         <Footer />
       </footer>

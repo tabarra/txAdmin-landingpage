@@ -17,8 +17,8 @@ export const StatCounter: React.FC<StatCounterProps> = ({
   ...otherProps
 }) => {
   return (
-    <div className='flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
-      <div className='flex flex-col bg-gray-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
+    <div className='flex flex-col bg-neutral-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
+      <div className='flex flex-col bg-neutral-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
         <span className='text-txgreen text-3xl md:text-4xl'>
           <CountUp
             duration={2.9}

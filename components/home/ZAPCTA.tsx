@@ -11,7 +11,7 @@ export default function ZapCallToAction() {
         </div>
         <div>
           <a href="https://zap-hosting.com/txadmin2" target="_blank" rel="noopener">
-            <button className="group flex bg-txgreen hover:bg-green-500 rounded-lg text-black font-bold text-base py-3 px-4 transition duration-200 ease-in-out">
+            <button className="group flex bg-txgreen hover:bg-emerald-500 rounded-lg text-black font-bold text-base py-3 px-4 transition duration-200 ease-in-out">
               Get Your Server
               <ArrowRightIcon className="group-hover:animate-bounce-x h-6 w-6 ml-2" />
             </button>

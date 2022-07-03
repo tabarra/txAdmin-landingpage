@@ -1,6 +1,7 @@
 import React, { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { ArrowRightIcon, HeartIcon, XIcon } from '@heroicons/react/outline';
+import { ArrowRightIcon, XIcon } from '@heroicons/react/outline';
+import { HeartIcon } from '@heroicons/react/solid';
 import { ThirdPartyURLs } from '../../config/config';
 import { useZapDialog } from '../../context/ZapDialogProvider';
 
@@ -19,7 +20,7 @@ export const GettingStartedDialog: React.FC = ({}) => {
         <div className='flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0'>
           <Transition.Child
             as={Fragment}
-            enter='ease-out duration-300'
+            enter='ease-out duration-200'
             enterFrom='opacity-0'
             enterTo='opacity-100'
             leave='ease-in duration-200'
@@ -45,20 +46,22 @@ export const GettingStartedDialog: React.FC = ({}) => {
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
             <div className='inline-block align-bottom rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full'>
-              <div className='bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
+              <div className='bg-neutral-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
                 <div className='space-y-4'>
                   <div className='flex justify-between'>
                     <div className='mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10'>
-                      <HeartIcon className='w-6 h-6 text-green-500' />
+                      <HeartIcon className='w-6 h-6 text-green-400' />
                     </div>
-                    <button
+                    <div>
+                      <button
                       type='button'
-                      className='hidden sm:block bg-gray-700 hover:bg-gray-600 transition duration-200 ease-in-out rounded-lg p-2'
+                      className='p-2.5 hidden inline-block sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out block rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
                       onClick={() => setDialogOpen(false)}
                       ref={cancelButtonRef}
                     >
                       <XIcon className='h-5 w-5 text-gray-300' />
                     </button>
+                    </div>
                   </div>
                   <div className='mt-3 text-center sm:mt-0 sm:text-left'>
                     <Dialog.Title
@@ -78,19 +81,19 @@ export const GettingStartedDialog: React.FC = ({}) => {
                         >
                           ZAP-Hosting
                         </a>{' '}
-                        is the fastest and easiest route to get started with txAdmin, no
-                        skill required to get your pre-configured txAdmin-enabled server
+                        is the fastest and easiest way to get started with txAdmin. No
+                        skill required to get your pre-configured, txAdmin-enabled server
                         up and running in moments.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse'>
+              <div className='bg-cta px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse'>
                 <a href={ThirdPartyURLs.zapLink} target='_blank' rel='noopener'>
                   <button
                     type='button'
-                    className='w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-medium hover:bg-green-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm'
+                    className='w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-semibold hover:bg-emerald-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm'
                   >
                     Get started with ZAP-Hosting
                     <ArrowRightIcon className='group-hover:animate-bounce-x text-black h-6 h-6 sm:h-5 sm:h-5 ml-2' />
@@ -99,14 +102,14 @@ export const GettingStartedDialog: React.FC = ({}) => {
                 <a href={ThirdPartyURLs.serverGetStarted} target='_blank' rel='noopener'>
                   <button
                     type='button'
-                    className='mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
+                    className='mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-dialog-btn-2 text-base font-medium text-gray-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
                   >
                     Manual Setup
                   </button>
                 </a>
                 <button
                   type='button'
-                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-medium text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
+                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-bold text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
                   onClick={() => setDialogOpen(false)}
                   ref={cancelButtonRef}
                 >
