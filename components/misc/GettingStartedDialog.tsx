@@ -108,7 +108,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                 </a>
                 <button
                   type='button'
-                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-bold text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
+                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-neutral-800 text-base font-bold text-gray-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
                   onClick={() => onClose(false)}
                   ref={cancelButtonRef}
                 >
