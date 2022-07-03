@@ -11,9 +11,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   return (
     <>
-    <NavBar />
     <GettingStartedDialog open={open} onClose={() => setOpen(false)} />
-    <header className='bg-hero bg-cover h-screen flex justify-center'>
+    <div className='bg-hero bg-cover'>
+    <NavBar />
+    <header className='flex mx-auto justify-center h-screen'>
           <div className='m-auto max-w-5xl p-4 bg-opacity-20'>
             <div className='hidden xl:block absolute bottom-8 right-16 w-64 h-64 lg:opacity-100 transition-opacity'>
               <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
@@ -77,6 +78,7 @@ export default function Header() {
             </div>
           </div>
       </header>
+      </div>
     </>
   );
 };
