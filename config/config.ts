@@ -33,6 +33,10 @@ export interface TxAdminStatsData {
   bans: number;
 }
 
+export interface RevealProps {
+  children: Element;
+}
+
 export const TxAdminStats = <TxAdminStatsData> {
   servers: 17,
   admins: 61,

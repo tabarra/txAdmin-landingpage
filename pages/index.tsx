@@ -1,10 +1,7 @@
 import dynamic from 'next/dynamic';
-import { ArrowRightIcon } from '@heroicons/react/solid';
-import { StatCounter } from '../components/misc/StatCounter';
-import { useZapDialog } from '../context/ZapDialogProvider';
-import { TxAdminStats } from '../config/config';
-import Image from 'next/image';
-import AnimatedSnaily from '../public/txsnaily2_animated.png';
+import Head from 'next/head';
+import FooterCTA from '../components/home/FooterCTA';
+import Footer from '../components/layout/Footer';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
@@ -12,76 +9,39 @@ const About = dynamic(() => import('../components/home/About'));
 const Features = dynamic(() => import('../components/home/Features'));
 
 export default function Home() {
-  const { setDialogOpen } = useZapDialog();
-
   return (
     <>
-      <header className='bg-hero bg-cover h-screen'>
-        <Header>
-          <div className='m-auto max-w-5xl p-4 bg-opacity-20'>
-            <div className='hidden xl:block absolute bottom-8 right-16 w-64 h-64 lg:opacity-100 transition-opacity'>
-              <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
-            </div>
-            <div className='flex flex-col space-y-4 align-middle text-center'>
-              <h1 className='text-white font-bold text-2xl lg:text-5xl min-w-0'>
-                Manage & Monitor your <span className="text-fivem-red">FiveM</span> Server
-              </h1>
-              <p className='text-gray-300 text-md font-medium lg:text-lg px-16'>
-                txAdmin is a <span className='font-bold'>completely free to use</span>,
-                full-featured <span className='font-bold'>web panel</span> to Manage &
-                Monitor your FiveM Server remotely, in use by over{' '}
-                <span className='font-bold'>{TxAdminStats.servers} thousand servers</span> worldwide at any
-                given time.
-              </p>
-              <div className='space-y-10'>
-                <div className='flex justify-center mt-3 space-x-2 flex-wrap'>
-                  <StatCounter
-                    labelSuffix='online'
-                    valueSuffix='servers'
-                    valueUnit='k+'
-                    start={1}
-                    end={TxAdminStats.servers}
-                  />
-                  <StatCounter
-                    valueSuffix='admins'
-                    valueUnit='k+'
-                    end={TxAdminStats.admins}
-                  />
-                  <StatCounter
-                    valueSuffix='bans'
-                    valueUnit='k+'
-                    end={TxAdminStats.bans}
-                  />
-                </div>
-                <div className='flex flex-col space-y-2 justify-center md:flex-row md:space-y-0 md:space-x-2'>
-                  <div>
-                    <button className='hidden group flex mx-auto justify-center w-60 md:w-44 bg-txgreen hover:bg-green-400 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out'>
-                      Statistics
-                      <ArrowRightIcon className='group-hover:animate-bounce-x h-6 h-6 ml-2' />
-                    </button>
-                  </div>
-
-                  <div>
-                    <button className='hidden group flex mx-auto justify-center w-60 md:w-44 bg-txgreen hover:bg-green-400 text-white font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out'>
-                      How to Login
-                      <ArrowRightIcon className='group-hover:animate-bounce-x h-6 h-6 ml-2' />
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => setDialogOpen(true)}
-                      className='group flex mx-auto justify-center w-60 bg-txgreen hover:bg-emerald-500 text-black font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out'
-                    >
-                      Get Started
-                      <ArrowRightIcon className='group-hover:animate-bounce-x h-6 h-6 ml-2' />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Header>
-      </header>
+        <Head>
+        <title>txAdmin - The best FiveM server management solution</title>
+        <link rel='icon' href='./favicon.png' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        />
+        <meta name='theme-color' content='#0EB880' />
+        <meta
+          name='description'
+          content='txAdmin is a completely free to use, full-featured web panel to Manage & Monitor your FiveM Server remotely, in use by over TEN thousand servers worldwide at any given time.'
+        />
+        <meta
+          name='keywords'
+          content='txadmin, fivem, fivem server, login, discord, manage fivem, fivem monitoring, fivem server panel, fivem web panel, fivem recipes'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:site_name' content='txAdmin' />
+        <meta
+          property='og:title'
+          content='txAdmin - The best FiveM server management solution'
+        />
+        <meta
+          property='og:description'
+          content='txAdmin is a completely free to use, full-featured web panel to Manage & Monitor your FiveM Server remotely, in use by over TEN thousand servers worldwide at any given time.'
+        />
+        <meta property='og:url' content='https://txadm.in' />
+        <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />
+        <link rel='canonical' href='https://txadm.in' />
+      </Head>
+    <Header />
       <div className='space-y-32 bg-neutral-900'>
         <ZAPCTA />
         <div className='space-y-32 bg-neutral-900'>
@@ -93,6 +53,10 @@ export default function Home() {
           </main>
         </div>
       </div>
+      <footer className='bg-neutral-900 pt-16'>
+        <FooterCTA />
+        <Footer />
+      </footer>
     </>
   );
 }

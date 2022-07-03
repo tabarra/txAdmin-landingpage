@@ -1,21 +1,20 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { ArrowRightIcon, XIcon } from '@heroicons/react/outline';
 import { HeartIcon } from '@heroicons/react/solid';
 import { ThirdPartyURLs } from '../../config/config';
-import { useZapDialog } from '../../context/ZapDialogProvider';
 
-export const GettingStartedDialog: React.FC = ({}) => {
-  const { isDialogOpen, setDialogOpen } = useZapDialog();
+export default function GettingStartedDialog(props: { open: any; onClose: any; }) {
+  const {open, onClose} = props;
   const cancelButtonRef = useRef<HTMLButtonElement | null>(null);
 
   return (
-    <Transition.Root show={isDialogOpen} as={Fragment}>
+    <Transition.Root show={open} as={Fragment}>
       <Dialog
         as='div'
         className='fixed z-10 inset-0 overflow-y-auto'
         initialFocus={cancelButtonRef}
-        onClose={() => setDialogOpen(false)}
+        onClose={() => onClose(false)}
       >
         <div className='flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0'>
           <Transition.Child
@@ -56,7 +55,7 @@ export const GettingStartedDialog: React.FC = ({}) => {
                       <button
                       type='button'
                       className='p-2.5 hidden inline-block sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out block rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
-                      onClick={() => setDialogOpen(false)}
+                      onClick={() => onClose(false)}
                       ref={cancelButtonRef}
                     >
                       <XIcon className='h-5 w-5 text-gray-300' />
@@ -110,7 +109,7 @@ export const GettingStartedDialog: React.FC = ({}) => {
                 <button
                   type='button'
                   className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-gray-700 text-base font-bold text-gray-200 hover:bg-gray-800 focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
-                  onClick={() => setDialogOpen(false)}
+                  onClick={() => onClose(false)}
                   ref={cancelButtonRef}
                 >
                   Go Back
