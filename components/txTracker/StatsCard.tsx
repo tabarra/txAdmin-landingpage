@@ -1,0 +1,47 @@
+
+import React from 'react';
+import { Box, HStack, Text, Icon, VStack, GridItem } from '@chakra-ui/react';
+import CountUp from 'react-countup';
+import { IconType } from 'react-icons';
+
+interface StatsCardProps {
+  cardTitle: string;
+  CardIcon: IconType;
+  lastRefreshed: string;
+  value: number;
+}
+
+export const StatsCard: React.FC<StatsCardProps> = ({
+  CardIcon,
+  cardTitle,
+  lastRefreshed,
+  value,
+}) => {
+  return (
+    <GridItem>
+      <Box rounded='xl' boxShadow='xl' bg={'bg.light'} p={5}>
+        <VStack alignItems='flex-start'>
+          <HStack spacing={3}>
+            <Icon as={CardIcon} w={25} h={25} color={'primary.main'} />
+            <Text
+              fontSize='md'
+              color='text.secondary'
+              fontWeight='300'
+              whiteSpace='nowrap'
+              overflow='hidden'
+              textOverflow='ellipsis'
+            >
+              {cardTitle}
+            </Text>
+          </HStack>
+          <Text fontSize='xl' fontWeight='600' color='text.primary'>
+            <CountUp end={value} duration={2} separator={','} />
+            <Box as='span' fontWeight={300}>
+              {''} servers
+            </Box>
+          </Text>
+        </VStack>
+      </Box>
+    </GridItem>
+  );
+};

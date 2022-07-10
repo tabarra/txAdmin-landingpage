@@ -10,15 +10,21 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.2.3",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@fontsource/montserrat": "^4.5.1",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
-    "framer-motion": "^6.3.16",
+    "@types/react-icons": "^3.0.0",
+    "framer-motion": "^6.4.3",
     "next": "^12.1.0",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-countup": "^6.1.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.3.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "recharts": "^2.1.12",
+    "recoil": "^0.7.4",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
