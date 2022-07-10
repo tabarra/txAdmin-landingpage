@@ -16,7 +16,7 @@ export default function Header() {
     <NavBar />
     <header className='flex mx-auto justify-center h-screen'>
           <div className='m-auto max-w-5xl p-4 bg-opacity-20'>
-            <div className='hidden xl:block absolute bottom-8 right-16 w-64 h-64 lg:opacity-100 transition-opacity'>
+            <div className='hidden xl:block absolute top-96 right-16 w-64 h-64 lg:opacity-100 transition-opacity'>
               <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
             </div>
             <div className='flex flex-col space-y-4 align-middle text-center'>
