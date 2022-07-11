@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/solid';
 import { StatCounter } from '../../components/misc/StatCounter';
 import { TxAdminStats } from '../../config/config';
-import Image from 'next/image';
-import AnimatedSnaily from '../../public/txsnaily2_animated.png';
 import NavBar from './NavBar';
 import GettingStartedDialog from '../misc/GettingStartedDialog';
 
@@ -15,10 +13,7 @@ export default function Header() {
     <div className='bg-hero bg-cover'>
     <NavBar />
     <header className='flex mx-auto justify-center h-screen'>
-          <div className='m-auto max-w-5xl p-4 bg-opacity-20'>
-            <div className='hidden xl:block absolute top-96 right-16 w-64 h-64 lg:opacity-100 transition-opacity'>
-              <Image src={AnimatedSnaily} alt='animated-snaily' layout='fill' priority />
-            </div>
+          <div className='m-auto max-w-5xl p-4'>
             <div className='flex flex-col space-y-4 align-middle text-center'>
               <h1 className='text-white font-bold text-2xl lg:text-5xl min-w-0'>
                 Manage & Monitor your <span className="text-fivem-red">FiveM</span> Server
@@ -46,7 +41,7 @@ export default function Header() {
                   />
                   <StatCounter
                     valueSuffix='bans'
-                    valueUnit='k+'
+                    valueUnit='m+'
                     end={TxAdminStats.bans}
                   />
                 </div>

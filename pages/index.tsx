@@ -41,8 +41,10 @@ export default function Home() {
         <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />
         <link rel='canonical' href='https://txadm.in' />
       </Head>
+      <div className='overflow-auto z-0'>
     <Header />
-      <div className='space-y-32 bg-neutral-900'>
+    </div>
+      <div className='space-y-32 bg-neutral-900 z-10'>
         <ZAPCTA />
         <div className='space-y-32 bg-neutral-900'>
           <main className='flex-grow space-y-12'>

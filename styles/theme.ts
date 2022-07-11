@@ -12,7 +12,7 @@ const colors = {
     light: '#4EFCBB',
   },
   bg: {
-    dark: '#111827',
+    dark: '#171717',
     light: '#192338',
     lightest: '#1F2D4A',
     darkest: '#111827',
@@ -24,7 +24,7 @@ const colors = {
   },
 };
 
-export const customTheme = extendTheme({
+export const theme = extendTheme({
   fonts: {
     body: '"Montserrat", sans-serif',
     heading: '"Montserrat", sans-serif',

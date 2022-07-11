@@ -57,9 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'G-4DK3P3MG65');
         `}
         </Script>
-        <ChakraProvider theme={theme}>
         <Component {...pageProps} />
-        </ChakraProvider>
         </>
   );
 }

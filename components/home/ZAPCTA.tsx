@@ -3,7 +3,7 @@ import { ArrowRightIcon } from '@heroicons/react/outline'
 export default function ZapCallToAction() {
   return (
     <div className="bg-cta shadow-md">
-      <hr className="border-2 border-txgreen animate-pulse w-full" />
+      <hr className="border-2 border-txgreen animate-pulse w-screen" />
       <div className="flex flex-col space-y-7 lg:space-y-0 lg:flex-row p-10 justify-evenly items-center">
         <div className="space-y-5 text-center lg:text-left lg:space-y-0">
           <h2 className="text-white font-bold text-2xl">Get your own FiveM <span className="text-txgreen">txAdmin</span> server</h2>
@@ -18,7 +18,7 @@ export default function ZapCallToAction() {
           </a>
         </div>
       </div>
-      <hr className="border-2 border-txgreen animate-pulse w-full" />
+      <hr className="border-2 border-txgreen animate-pulse w-screen" />
     </div>
   )
 };
