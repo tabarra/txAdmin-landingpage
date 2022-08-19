@@ -25,7 +25,7 @@ module.exports = {
         'dialog-btn-hvr': '#1c1c1c',
         'dialog-btn-2': '#282828',
         'txgreen': '#45E696',
-        'fivem-red': '#f40552',
+        'fivem-red': '#ff8637',
       },
       fontFamily: {
         sans: ['"Montserrat"', 'sans-serif']
