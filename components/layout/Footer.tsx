@@ -32,7 +32,7 @@ export default function Footer() {
           <div className='mt-7 text-center text-base text-gray-400'>
         <p>txAdmin is licensed under the MIT license.</p>
         <p>Page Design by <a className='font-medium' href='https://github.com/goodnightnoodles'>Noodles</a>.</p>
-        <p>&copy; 2019-2021 André Tabarra</p>
+        <p>&copy; 2019-{new Date().getFullYear()} André Tabarra</p>
               <Link href="https://vercel.com/?utm_source=txadmin&utm_campaign=oss" passHref>
                   <a>
           <div className='flex mt-5 space-x-1 justify-center'>
