@@ -29,9 +29,22 @@ export default function Footer() {
                         <NavItem url={item.url} name={item.name} key={item.name} />
                       ))}
         </nav>
-        <p className="mt-7 text-center text-base text-gray-400">txAdmin is licensed under the MIT license.</p>
-        <p className="text-center text-base text-gray-400">Page Design by Noodles#1234</p>
-        <p className="text-center text-base text-gray-400">&copy; 2019-2021 André Tabarra</p>
+          <div className='mt-7 text-center text-base text-gray-400'>
+        <p>txAdmin is licensed under the MIT license.</p>
+        <p>Page Design by Noodles#1234</p>
+        <p>&copy; 2019-2021 André Tabarra</p>
+              <Link href="https://vercel.com/?utm_source=txadmin&utm_campaign=oss" passHref>
+                  <a>
+          <div className='flex mt-5 space-x-1 justify-center'>
+              <span className='text-neutral-400 font-medium'>Powered by</span>
+              <svg className='h-6 w-6' viewBox="0 0 1155 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M577.344 0L1154.69 1000H0L577.344 0Z" fill="white"/>
+              </svg>
+
+          </div>
+                  </a>
+              </Link>
+          </div>
       </div>
     </footer>
   )
