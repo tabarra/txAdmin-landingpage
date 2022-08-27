@@ -28,7 +28,7 @@ export default function Features() {
       y: 0
     }}
     transition={{
-      duration: 0.9,
+      duration: 0.7,
       ease: "easeInOut",
     }}>
         <div className='text-center space-y-2 m-8'>

@@ -14,7 +14,7 @@ export default function About() {
       y: 0
     }}
     transition={{
-      duration: 0.9,
+      duration: 0.7,
       ease: "easeInOut",
     }}>
     <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 mx-auto justify-evenly items-center">
