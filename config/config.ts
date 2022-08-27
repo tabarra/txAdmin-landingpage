@@ -39,7 +39,7 @@ export interface RevealProps {
 
 export const TxAdminStats = <TxAdminStatsData> {
   servers: 17,
-  admins: 61,
+  admins: 64,
   bans: 1.3,
 }
 
