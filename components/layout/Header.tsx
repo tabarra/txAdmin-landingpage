@@ -62,7 +62,7 @@ export default function Header() {
                   <div>
                     <button
                       onClick={() => setOpen(true)}
-                      className='group flex mx-auto justify-center w-60 bg-txgreen hover:bg-emerald-500 text-black font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out'
+                      className='group flex mx-auto justify-center w-60 bg-txgreen hover:bg-emerald-400 text-black font-bold text-base py-2 px-3 rounded-lg transition duration-200 ease-in-out'
                     >
                       Get Started
                       <ArrowRightIcon className='group-hover:animate-bounce-x h-6 h-6 ml-2' />
