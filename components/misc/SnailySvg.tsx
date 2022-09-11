@@ -1,10 +1,4 @@
 import React from 'react';
-import { Icon } from '@chakra-ui/react';
-
-interface SnailySvgProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
 
 export const SnailySvg: React.FC = ({}) => (
   <svg
