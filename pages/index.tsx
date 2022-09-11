@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import FooterCTA from '../components/home/FooterCTA';
 import Footer from '../components/layout/Footer';
+import { TxMetaDescription } from '../config/config';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
@@ -21,7 +22,7 @@ export default function Home() {
         <meta name='theme-color' content='#0EB880' />
         <meta
           name='description'
-          content='txAdmin is a completely free to use, full-featured web panel to Manage & Monitor your FiveM Server remotely, in use by over TEN thousand servers worldwide at any given time.'
+          content={TxMetaDescription}
         />
         <meta
           name='keywords'
@@ -35,7 +36,7 @@ export default function Home() {
         />
         <meta
           property='og:description'
-          content='txAdmin is a completely free to use, full-featured web panel to Manage & Monitor your FiveM Server remotely, in use by over TEN thousand servers worldwide at any given time.'
+          content={TxMetaDescription}
         />
         <meta property='og:url' content='https://txadm.in' />
         <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />

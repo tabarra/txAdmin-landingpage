@@ -27,21 +27,14 @@ export const NavbarItems: NavbarItemData[] = [
   },
 ];
 
-export interface TxAdminStatsData {
-  servers: number;
-  admins: number;
-  bans: number;
-}
 
-export interface RevealProps {
-  children: Element;
-}
-
-export const TxAdminStats = <TxAdminStatsData> {
-  servers: 17,
-  admins: 64,
+export const TxAdminStats = {
+  servers: 18,
+  admins: 69,
   bans: 1.3,
 }
+
+export const TxMetaDescription = `txAdmin is a full featured web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by over ${TxAdminStats.servers} thousand servers worldwide at any given time.`;
 
 export interface FeatureItemData {
   title: string;
@@ -78,7 +71,7 @@ export const FeaturesData: FeatureItemData[] = [
     FeatureIcon: AiFillLock,
     title: 'Security',
     description:
-      'txAdmin features authentication via CitizenFX, admin permissions, action logging, and brute-force protection.',
+      'txAdmin features authentication via Cfx.re, admin permissions, action logging, and brute-force protection.',
   },
   {
     FeatureIcon: FiSearch,

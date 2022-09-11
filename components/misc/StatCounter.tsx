@@ -5,6 +5,7 @@ interface StatCounterProps extends CountUpProps {
   labelSuffix?: string;
   valueSuffix: string;
   valueUnit: string;
+  decimals?: number;
   start?: number;
 }
 
@@ -12,6 +13,7 @@ export const StatCounter: React.FC<StatCounterProps> = ({
   valueUnit,
   valueSuffix,
   start = 0,
+  decimals = 0,
   labelSuffix,
   end,
   ...otherProps
@@ -25,6 +27,7 @@ export const StatCounter: React.FC<StatCounterProps> = ({
             separator=','
             useEasing={true}
             start={start}
+            decimals={decimals}
             end={end}
             {...otherProps}
           />

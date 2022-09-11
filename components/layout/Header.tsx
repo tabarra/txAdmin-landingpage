@@ -41,6 +41,7 @@ export default function Header() {
                   />
                   <StatCounter
                     valueSuffix='bans'
+                    decimals={1}
                     valueUnit='m+'
                     end={TxAdminStats.bans}
                   />
