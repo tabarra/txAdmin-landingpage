@@ -22,7 +22,7 @@ import Link from 'next/link';
 
 const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
   <a
-    className='duration-200 ease-in-out text-white hover:text-gray-400 text-sm font-medium'
+    className='duration-200 ease-in-out text-white hover:text-gray-400 text-md font-medium'
     href={url}
     target='_blank'
     rel='noopener'
