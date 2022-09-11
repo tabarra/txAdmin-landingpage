@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import FooterCTA from '../components/home/FooterCTA';
 import Footer from '../components/layout/Footer';
-import { TxMetaDescription } from '../config/config';
+import { TxMetaFields } from '../config/config';
 
 const Header = dynamic(() => import('../components/layout/Header'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
@@ -13,33 +13,18 @@ export default function Home() {
   return (
     <>
         <Head>
-        <title>txAdmin - The best FiveM server management solution</title>
+        <title>{TxMetaFields.title}</title>
         <link rel='icon' href='./favicon.png' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, shrink-to-fit=no'
-        />
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
         <meta name='theme-color' content='#0EB880' />
-        <meta
-          name='description'
-          content={TxMetaDescription}
-        />
-        <meta
-          name='keywords'
-          content='txadmin, fivem, fivem server, login, discord, manage fivem, fivem monitoring, fivem server panel, fivem web panel, fivem recipes'
-        />
+        <meta name='description' content={TxMetaFields.description} />
+        <meta name='keywords' content={TxMetaFields.keywords} />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='txAdmin' />
-        <meta
-          property='og:title'
-          content='txAdmin - The best FiveM server management solution'
-        />
-        <meta
-          property='og:description'
-          content={TxMetaDescription}
-        />
-        <meta property='og:url' content='https://txadm.in' />
-        <meta property='og:image' content='https://i.file.glass/yuFh9dmlBS.png' />
+        <meta property='og:title' content={TxMetaFields.title} />
+        <meta property='og:description' content={TxMetaFields.description} />
+        <meta property='og:url' content='https://txadm.in/' />
+        <meta property='og:image' content='https://txadm.in/tx-discord-logo.png' />
         <link rel='canonical' href='https://txadm.in' />
       </Head>
       <div className='overflow-auto z-0'>

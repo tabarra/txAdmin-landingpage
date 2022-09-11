@@ -19,24 +19,22 @@ export const StatCounter: React.FC<StatCounterProps> = ({
   ...otherProps
 }) => {
   return (
-    <div className='flex flex-col bg-neutral-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
-      <div className='flex flex-col bg-neutral-800 rounded-2xl items-center justify-center w-36 h-20 m-2'>
-        <span className='text-txgreen text-3xl md:text-4xl'>
-          <CountUp
-            duration={2.9}
-            separator=','
-            useEasing={true}
-            start={start}
-            decimals={decimals}
-            end={end}
-            {...otherProps}
-          />
-          {valueUnit}
-        </span>
-        <span className='text-gray-300 text-sm md:text-base'>
-          {valueSuffix} <span className='hidden md:inline'>{labelSuffix ?? ''}</span>
-        </span>
-      </div>
+    <div className='flex flex-col bg-neutral-800 rounded-2xl items-center justify-center w-40 h-20 m-2'>
+      <span className='text-txgreen text-3xl md:text-4xl'>
+        <CountUp
+          duration={2.9}
+          separator=','
+          useEasing={true}
+          start={start}
+          decimals={decimals}
+          end={end}
+          {...otherProps}
+        />
+        {valueUnit}
+      </span>
+      <span className='text-gray-300 text-sm md:text-base'>
+        {valueSuffix} <span className='hidden md:inline'>{labelSuffix ?? ''}</span>
+      </span>
     </div>
   );
 };

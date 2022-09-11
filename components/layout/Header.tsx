@@ -28,22 +28,24 @@ export default function Header() {
               <div className='space-y-10'>
                 <div className='flex justify-center mt-3 space-x-2 flex-wrap'>
                   <StatCounter
+                    decimals={1}
                     labelSuffix='online'
                     valueSuffix='servers'
-                    valueUnit='k+'
+                    valueUnit='k'
                     start={1}
-                    end={TxAdminStats.servers}
+                    end={TxAdminStats.servers/1000}
                   />
                   <StatCounter
-                    valueSuffix='admins'
-                    valueUnit='k+'
-                    end={TxAdminStats.admins}
-                  />
-                  <StatCounter
-                    valueSuffix='bans'
                     decimals={1}
-                    valueUnit='m+'
-                    end={TxAdminStats.bans}
+                    valueSuffix='admins'
+                    valueUnit='k'
+                    end={TxAdminStats.admins/1000}
+                  />
+                  <StatCounter
+                    decimals={2}
+                    valueSuffix='bans'
+                    valueUnit='m'
+                    end={TxAdminStats.bans/1000000}
                   />
                 </div>
                 <div className='flex flex-col space-y-2 justify-center md:flex-row md:space-y-0 md:space-x-2'>

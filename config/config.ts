@@ -29,12 +29,16 @@ export const NavbarItems: NavbarItemData[] = [
 
 
 export const TxAdminStats = {
-  servers: 18,
-  admins: 69,
-  bans: 1.3,
+  servers: 18585,
+  admins: 69013,
+  bans: 1232368,
 }
 
-export const TxMetaDescription = `txAdmin is a full featured web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by over ${TxAdminStats.servers} thousand servers worldwide at any given time.`;
+export const TxMetaFields = {
+  title: 'txAdmin - FiveM/RedM Server Management',
+  description: `txAdmin is a full featured web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by over ${TxAdminStats.servers} thousand servers worldwide at any given time.`,
+  keywords: 'txadmin, login, fivem server, manage fivem, fivem monitoring, fivem server panel, fivem web panel, fivem recipes'
+}
 
 export interface FeatureItemData {
   title: string;
