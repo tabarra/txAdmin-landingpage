@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { ArrowRightIcon, XIcon } from '@heroicons/react/outline';
-import { HeartIcon } from '@heroicons/react/solid';
+import { ArrowRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { HeartIcon } from '@heroicons/react/24/solid';
 import { ThirdPartyURLs } from '../../config/config';
 
 export default function GettingStartedDialog(props: { open: any; onClose: any; }) {
@@ -58,7 +58,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                       onClick={() => onClose(false)}
                       ref={cancelButtonRef}
                     >
-                      <XIcon className='h-5 w-5 text-gray-300' />
+                      <XMarkIcon className='h-5 w-5 text-gray-300' />
                     </button>
                     </div>
                   </div>
@@ -95,7 +95,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                     className='w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-semibold hover:bg-emerald-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm'
                   >
                     Get started with ZAP-Hosting
-                    <ArrowRightIcon className='group-hover:animate-bounce-x text-black h-6 h-6 sm:h-5 sm:h-5 ml-2' />
+                    <ArrowRightIcon className='group-hover:animate-bounce-x text-black h-6 sm:h-5 sm:h-5 ml-2' />
                   </button>
                 </a>
                 <a href={ThirdPartyURLs.serverGetStarted} target='_blank' rel='noopener'>

@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import FooterCTA from '../components/home/FooterCTA';
 import Footer from '../components/layout/Footer';
-import { TxMetaFields } from '../config/config';
+import HtmlHead from '../components/misc/HtmlHead';
 
-const Header = dynamic(() => import('../components/layout/Header'));
+const Hero = dynamic(() => import('../components/layout/Hero'));
 const ZAPCTA = dynamic(() => import('../components/home/ZAPCTA'));
 const About = dynamic(() => import('../components/home/About'));
 const Features = dynamic(() => import('../components/home/Features'));
@@ -12,24 +11,10 @@ const Features = dynamic(() => import('../components/home/Features'));
 export default function Home() {
   return (
     <>
-        <Head>
-        <title>{TxMetaFields.title}</title>
-        <link rel='icon' href='./favicon.png' />
-        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-        <meta name='theme-color' content='#0EB880' />
-        <meta name='description' content={TxMetaFields.description} />
-        <meta name='keywords' content={TxMetaFields.keywords} />
-        <meta property='og:type' content='website' />
-        <meta property='og:site_name' content='txAdmin' />
-        <meta property='og:title' content={TxMetaFields.title} />
-        <meta property='og:description' content={TxMetaFields.description} />
-        <meta property='og:url' content='https://txadm.in/' />
-        <meta property='og:image' content='https://txadm.in/tx-discord-logo.png' />
-        <link rel='canonical' href='https://txadm.in' />
-      </Head>
+      <HtmlHead />
       <div className='overflow-auto z-0'>
-    <Header />
-    </div>
+        <Hero />
+      </div>
       <div className='space-y-32 bg-neutral-900 z-10'>
         <ZAPCTA />
         <div className='space-y-32 bg-neutral-900'>

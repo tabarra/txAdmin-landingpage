@@ -10,9 +10,9 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@fontsource/montserrat": "^4.5.1",
+    "@fontsource/montserrat": "^4.5.12",
     "@headlessui/react": "^1.4.2",
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^2.0.11",
     "@types/react-icons": "^3.0.0",
     "framer-motion": "^6.4.3",
     "next": "^12.1.0",

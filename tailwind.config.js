@@ -10,7 +10,7 @@ module.exports = {
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       'zap': '0 2px 4px 0 #4bc46b',
-     '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+      '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
     },
@@ -18,7 +18,10 @@ module.exports = {
       backgroundImage: theme => ({
         'hero': "url('/hero.webp')",
         'snaily': "url('/snaily.svg')",
-       }),
+      }),
+      backgroundSize: {
+        '4x': '400%'
+      },
       colors: {
         'content': '#192338',
         'cta': '#121212',
@@ -32,19 +35,24 @@ module.exports = {
       },
       keyframes: {
         'bounce-x': {
-          '0%, 100%': { transform: 'translateX(0px)'},
+          '0%, 100%': { transform: 'translateX(0px)' },
           '50%': { transform: 'translateX(-3px)' },
+        },
+        'bg-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         }
-    },
-    animation: {
+      },
+      animation: {
         'bounce-x': 'bounce-x 1s infinite',
-    },
+        'bg-shift': 'bg-shift 3s ease infinite',
+      },
     },
   },
   variants: {
     extend: {
-      animation: ['group-hover'] 
+      animation: ['group-hover']
     }
   },
   plugins: [],
-}
+};
