@@ -1,4 +1,5 @@
-import { HashtagIcon, ChartBarIcon, ShieldExclamationIcon, UserGroupIcon, UserIcon, NoSymbolIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { HashtagIcon, ChartBarIcon, UserGroupIcon, UserIcon, NoSymbolIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import CountUp from 'react-countup';
 import Footer from '../components/layout/Footer';
 import NavBar from '../components/layout/NavBar';
@@ -277,28 +278,46 @@ const StatsVersionsTable: React.FC = () => {
 }
 
 
-export default function Home() {
+type gspPropsType = {
+  req: NextApiRequest,
+  res: NextApiResponse,
+}
+type statsPagePropsType = {
+  rnd: number,
+  secret?: string,
+}
+export async function getServerSideProps({ req, res }: gspPropsType) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=30, stale-while-revalidate=59'
+  )
+  return {
+    props: {
+      rnd: Math.random(),
+      secret: process.env.TEST_SECRET?.substring(0, 6),
+    },
+  }
+}
+
+export default function Home(props: statsPagePropsType) {
   return (
     <>
       <HtmlHead />
       <NavBar />
 
-
-
       <div className='space-y-28 bg-neutral-900'>
         <div className='container mx-auto max-w-6xl p-8 space-y-6 bg-gray-500 bg-opacity-0'>
           <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>txAdmin Statistics</h1>
-
+          <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>{props.rnd}</h1>
+          <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>{props.secret}</h1>
           <div className="grid lg:grid-cols-2 gap-10">
             <StatsCards />
             <StatsVersionsTable />
           </div>
-
           <p className="text-gray-400 text-md italic text-center max-w-3xl mx-auto">
             <strong>Note:</strong> The FiveM public serverlist contains all servers (public and private), and txTracker collects, processes and enriches this data to deliver the stats above.
             This is not a cumulative measurement, just a snapshot of the online servers at the time of the hourly scan.
           </p>
-
         </div>
       </div>
 
