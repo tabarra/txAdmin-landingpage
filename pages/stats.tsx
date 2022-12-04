@@ -4,72 +4,76 @@ import CountUp from 'react-countup';
 import Footer from '../components/layout/Footer';
 import NavBar from '../components/layout/NavBar';
 import HtmlHead from '../components/misc/HtmlHead';
-
-const statsTxServers = 17697;
-type txVersDataType = [string, number][];
-const statsTxVersions: txVersDataType = [
-  ["v4.18.0", 2392],
-  ["v4.18.0-rc2", 3],
-  ["v4.17.1", 7047],
-  ["v4.17.0", 7],
-  ["v4.16.0", 1009],
-  ["v4.15.1", 1056],
-  ["v4.15.0", 5],
-  ["v4.14.2", 426],
-  ["v4.14.1", 151],
-  ["v4.14.0", 4856],
-  ["v4.13.4", 37],
-  ["v4.13.3", 260],
-  ["v4.13.1", 26],
-  ["v4.13.0", 1],
-  ["v4.12.1", 31],
-  ["v4.12.0", 5],
-  ["v4.11.0", 197],
-  ["v4.10.0", 35],
-  ["v4.9.0", 15],
-  ["v4.8.0", 9],
-  ["v4.7.0", 13],
-  ["v4.6.1", 8],
-  ["v4.6.0", 1],
-  ["v4.5.0", 11],
-  ["v4.4.2", 41],
-  ["v4.4.1", 15],
-  ["v4.4.0", 1],
-  ["v4.3.1", 5],
-  ["v4.2.0", 1],
-  ["v4.1.0", 2],
-  ["v3.8.0", 1],
-  ["v3.7.0", 4],
-  ["v3.6.4", 1],
-  ["v3.3.0", 6],
-  ["v3.2.3", 3],
-  ["v3.1.0", 2],
-  ["v2.7.2", 2],
-  ["v2.7.1", 2],
-  ["v2.5.1", 2],
-  ["v2.4.0", 1],
-  ["v2.0.1", 1],
-  ["v1.15.0", 1]
-];
+import dynamic from 'next/dynamic';
 
 
-const toPct = (num: number, total: number) => {
-  return (num * 100 / total).toFixed(2) + '%';
+type MetadataLogType = {
+  version: number;
+  ts: string;
+  players: [number, number]
+  usage: {
+    top100: [number, number];
+    top500: [number, number];
+    top1000: [number, number];
+  };
+  servers: {
+    total: number;
+    public: [number, number];
+    txAdmin: [number, number];
+  };
+  versions: [string, number][];
+  publicNumbers: {
+    admins: number;
+    players: number;
+    playTime: number;
+    bans: number;
+    warns: number;
+    whitelists: number;
+  };
 }
 
-type versionsTableType = [string, number, string, string][];
-const versionsTable: versionsTableType = [];
+type gspFuncPropsType = {
+  req: NextApiRequest,
+  res: NextApiResponse,
+}
+type gspPropsType = MetadataLogType | { error: string }
+type gspReturnType = {
+  props: gspPropsType
+};
+type ReleasesApiRespType = {
+  tag_name: string;
+  published_at: string;
+}[];
 
-const tableShowThreshold = statsTxServers * 0.005;
-let excludedCnt = 0;
-for (const [version, cnt] of statsTxVersions) {
-  if (cnt > tableShowThreshold) {
-    versionsTable.push([version, cnt, toPct(cnt, statsTxServers), '1yr, 2m, 3w, 4d']);
-  } else {
-    excludedCnt += cnt;
+export async function getServerSideProps({ req, res }: gspFuncPropsType): Promise<gspReturnType> {
+  res.setHeader('Cache-Control', 'public, s-maxage=300');
+
+  try {
+    //txTracker Data
+    const trackerResp = await fetch(`${process.env.TRACKER_API_URL}/public/stats`, {
+      headers: { 'x-txtracker-token': process.env.TRACKER_API_TOKEN ?? 'not_set' },
+    });
+    const trackerData = await trackerResp.json() as MetadataLogType;
+    if (!('version' in trackerData)) throw new Error(`Invalid txTracker data.`);
+
+    //Github tag dates
+    // const ghResp = await fetch(`https://api.github.com/repos/tabarra/txAdmin/releases`);
+    // const ghData = await ghResp.json() as ReleasesApiRespType;
+    // if (!Array.isArray(ghData)) throw new Error(`Invalid GitHub API data.`);
+    // const versionDates = new Map();
+    //FIXME: we actually need to use the API with pagination, RIP
+
+
+    return { props: trackerData };
+  } catch (error) {
+    return {
+      props: {
+        error: (error as Error).message,
+      }
+    };
   }
 }
-versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, statsTxServers), '--']);
+
 
 /*
 Tooltip attempt
@@ -123,20 +127,25 @@ const StatsCard: React.FC<StatsCardProps> = ({
     </div>
   );
 };
+type MetadataComponentPropsType = {
+  data: MetadataLogType;
+}
+const StatsCards = ({ data }: MetadataComponentPropsType) => {
+  const toPct = ([yes, no]: [number, number]) => (yes / (yes + no)) * 100;
+  const MINUTES_IN_YEAR = 525600;
 
-const StatsCards: React.FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 h-fit tracking-wide">
 
       <StatsCard title='txAdmin Servers' IconComponent={HashtagIcon}>
         <CountUp
-          end={18585}
+          end={data.servers.txAdmin[0]}
           useEasing={true}
           duration={2}
         />
         <CountUp
           prefix=' ('
-          end={99.99}
+          end={toPct(data.servers.txAdmin)}
           decimals={2}
           suffix='%)'
           useEasing={true}
@@ -146,19 +155,19 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='Top 100/500/1000' IconComponent={ChartBarIcon}>
         <CountUp
-          end={99}
+          end={toPct(data.usage.top100)}
           suffix='% / '
           useEasing={true}
           duration={2}
         />
         <CountUp
-          end={99}
+          end={toPct(data.usage.top500)}
           suffix='% / '
           useEasing={true}
           duration={2}
         />
         <CountUp
-          end={99}
+          end={toPct(data.usage.top1000)}
           suffix='%'
           useEasing={true}
           duration={2}
@@ -167,13 +176,14 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='txAdmin Players' IconComponent={ChartBarIcon}>
         <CountUp
-          end={18585}
+          end={data.players[0]}
+          separator=','
           useEasing={true}
           duration={2}
         />
         <CountUp
           prefix=' ('
-          end={99.99}
+          end={toPct(data.players)}
           decimals={2}
           suffix='%)'
           useEasing={true}
@@ -183,7 +193,8 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='DB Admins' IconComponent={UserIcon}>
         <CountUp
-          end={18585}
+          end={data.publicNumbers.admins}
+          separator=','
           useEasing={true}
           duration={2}
         />
@@ -191,7 +202,8 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='DB Players' IconComponent={UserGroupIcon}>
         <CountUp
-          end={18585}
+          end={data.publicNumbers.players}
+          separator=','
           useEasing={true}
           duration={2}
         />
@@ -199,16 +211,18 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='DB Play Time' IconComponent={ChartBarIcon}>
         <CountUp
-          end={18585}
-          useEasing={true}
+          end={data.publicNumbers.playTime / MINUTES_IN_YEAR}
+          separator=','
           suffix=' years'
+          useEasing={true}
           duration={2}
         />
       </StatsCard>
 
       <StatsCard title='DB Bans' IconComponent={NoSymbolIcon}>
         <CountUp
-          end={18585}
+          end={data.publicNumbers.bans}
+          separator=','
           useEasing={true}
           duration={2}
         />
@@ -216,7 +230,8 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='DB Warns' IconComponent={ExclamationTriangleIcon}>
         <CountUp
-          end={18585}
+          end={data.publicNumbers.warns}
+          separator=','
           useEasing={true}
           duration={2}
         />
@@ -224,7 +239,8 @@ const StatsCards: React.FC = () => {
 
       <StatsCard title='DB Whitelists' IconComponent={ShieldCheckIcon}>
         <CountUp
-          end={18585}
+          end={data.publicNumbers.whitelists}
+          separator=','
           useEasing={true}
           duration={2}
         />
@@ -234,7 +250,26 @@ const StatsCards: React.FC = () => {
   )
 }
 
-const StatsVersionsTable: React.FC = () => {
+const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
+  const toPct = (num: number, total: number) => {
+    return (num * 100 / total).toFixed(2) + '%';
+  }
+
+  type versionsTableType = [string, number, string, string][];
+  const versionsTable: versionsTableType = [];
+
+  const txServerCount = data.servers.txAdmin[0];
+  const tableShowThreshold = txServerCount * 0.005;
+  let excludedCnt = 0;
+  for (const [version, cnt] of data.versions) {
+    if (cnt > tableShowThreshold) {
+      versionsTable.push([version, cnt, toPct(cnt, txServerCount), '1yr, 2m, 3w, 4d']);
+    } else {
+      excludedCnt += cnt;
+    }
+  }
+  versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--']);
+
   return (
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg min-w-fit">
       <table className="w-full text-sm text-left text-neutral-400">
@@ -249,9 +284,9 @@ const StatsVersionsTable: React.FC = () => {
             <th scope="col" className="py-3 px-6">
               %
             </th>
-            <th scope="col" className="py-3 px-6">
+            {/* <th scope="col" className="py-3 px-6">
               Release
-            </th>
+            </th> */}
           </tr>
         </thead>
         <tbody>
@@ -260,15 +295,15 @@ const StatsVersionsTable: React.FC = () => {
               <th scope="row" className="py-4 px-6 font-medium whitespace-nowrap text-white">
                 {version}
               </th>
-              <td className="py-4 px-6">
+              <td className="py-4 px-6 text-right">
                 {cnt}
               </td>
-              <td className="py-4 px-6">
+              <td className="py-4 px-6 text-right">
                 {pct}
               </td>
-              <td className="py-4 px-6">
+              {/* <td className="py-4 px-6 text-right">
                 {date}
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>
@@ -278,42 +313,35 @@ const StatsVersionsTable: React.FC = () => {
 }
 
 
-type gspPropsType = {
-  req: NextApiRequest,
-  res: NextApiResponse,
-}
-type statsPagePropsType = {
-  rnd: number,
-  secret?: string,
-}
-export async function getServerSideProps({ req, res }: gspPropsType) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=30, stale-while-revalidate=59'
-  )
-  return {
-    props: {
-      rnd: Math.random(),
-      secret: process.env.TEST_SECRET?.substring(0, 6),
-    },
-  }
-}
+const DynamicDate = dynamic(() => import('../components/misc/LastUpdated'), {
+  ssr: false
+})
 
-export default function Home(props: statsPagePropsType) {
+export default function Home(props: gspPropsType) {
+  let pageContent;
+  if ('error' in props) {
+    pageContent = <h4 className='text-red-400 text-2xl text-center max-w-3xl mx-auto'>Error: {props.error}</h4>;
+  } else {
+    pageContent = <>
+      <div className="grid lg:grid-cols-2 gap-10">
+        <StatsCards data={props} />
+        <StatsVersionsTable data={props} />
+      </div>
+      <div className='mx-auto text-center'>
+        <DynamicDate ts={props.ts} />
+      </div>
+    </>
+  }
+
   return (
     <>
       <HtmlHead />
       <NavBar />
 
       <div className='space-y-28 bg-neutral-900'>
-        <div className='container mx-auto max-w-6xl p-8 space-y-6 bg-gray-500 bg-opacity-0'>
+        <div className='container mx-auto max-w-6xl p-8 space-y-6'>
           <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>txAdmin Statistics</h1>
-          <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>{props.rnd}</h1>
-          <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>{props.secret}</h1>
-          <div className="grid lg:grid-cols-2 gap-10">
-            <StatsCards />
-            <StatsVersionsTable />
-          </div>
+          {pageContent}
           <p className="text-gray-400 text-md italic text-center max-w-3xl mx-auto">
             <strong>Note:</strong> The FiveM public serverlist contains all servers (public and private), and txTracker collects, processes and enriches this data to deliver the stats above.
             This is not a cumulative measurement, just a snapshot of the online servers at the time of the hourly scan.
