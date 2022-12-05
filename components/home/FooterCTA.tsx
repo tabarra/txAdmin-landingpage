@@ -1,6 +1,5 @@
-import { ArrowRightIcon, HeartIcon, XIcon } from '@heroicons/react/outline'
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 import GettingStartedDialog from '../misc/GettingStartedDialog'
 
 export default function FooterCallToAction() {
@@ -18,7 +17,7 @@ export default function FooterCallToAction() {
           <div>
             <button onClick={() => setOpen(true)} className="group flex bg-txgreen hover:bg-emerald-500 rounded-lg text-black font-bold text-base py-3 px-4 transition duration-200 ease-in-out">
               Get Started
-              <ArrowRightIcon className="group-hover:animate-bounce-x h-6 h-6 ml-2" />
+              <ArrowRightIcon className="group-hover:animate-bounce-x h-6 ml-2" />
             </button>
           </div>
         </div>

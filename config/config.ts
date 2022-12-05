@@ -10,20 +10,28 @@ import { GoSettings } from 'react-icons/go';
 export interface NavbarItemData {
   url: string;
   name: string;
+  openNew?: boolean;
 }
 
 export const NavbarItems: NavbarItemData[] = [
   {
-    name: 'Discord',
-    url: 'https://discord.gg/yWxjt9zPWR',
+    name: 'Stats',
+    url: '/stats',
   },
   {
-    name: 'Documentation',
+    name: 'Discord',
+    url: 'https://discord.gg/yWxjt9zPWR',
+    openNew: true,
+  },
+  {
+    name: 'Docs',
     url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    openNew: true,
   },
   {
     name: 'GitHub',
     url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    openNew: true,
   },
 ];
 

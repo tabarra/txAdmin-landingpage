@@ -1,3 +1,5 @@
+.env*.local
+
 # next.js build output
 .next
 out/

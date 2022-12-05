@@ -1,30 +1,16 @@
-import { Dialog, Transition } from '@headlessui/react';
+import { Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
-import { MenuAlt4Icon, XIcon } from '@heroicons/react/outline';
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline';
 import { NavbarItemData, NavbarItems } from '../../config/config';
-import { Popover } from '@headlessui/react'
-import {
-  BookmarkAltIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorClickIcon,
-  MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { Popover } from '@headlessui/react';
 import Link from 'next/link';
 
 
-const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
+const NavItem: React.FC<NavbarItemData> = ({ name, url, openNew }) => (
   <a
     className='duration-200 ease-in-out text-white hover:text-gray-400 text-md font-medium'
     href={url}
-    target='_blank'
+    target={openNew ? '_blank' : ''}
     rel='noopener'
   >
     {name}
@@ -47,12 +33,12 @@ export default function NavBar() {
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-neutral-800 rounded-xl p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-neutral-900 duration-100 ease-in-out focus:outline-none focus:ring-0">
               <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
           <nav className="hidden md:flex space-x-10">
             {NavbarItems.map((item) => (
-              <NavItem url={item.url} name={item.name} key={item.name} />
+              <NavItem url={item.url} name={item.name} openNew={item.openNew} key={item.name} />
             ))}
           </nav>
         </div>
@@ -82,7 +68,7 @@ export default function NavBar() {
                 <div className="-mr-2">
                   <Popover.Button className="bg-neutral-800 rounded-lg p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-neutral-800 duration-100 ease-in-out focus:outline-none focus:ring-0">
                     <span className="sr-only">Close menu</span>
-                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>
