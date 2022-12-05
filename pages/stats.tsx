@@ -51,7 +51,7 @@ export async function getServerSideProps({ req, res }: gspFuncPropsType): Promis
   try {
     //txTracker Data
     const trackerResp = await fetch(`${process.env.TRACKER_API_URL}/public/stats`, {
-      headers: { 'x-txtracker-token': process.env.TRACKER_API_TOKEN ?? 'not_set' },
+      headers: { 'x-api-token': process.env.TRACKER_API_TOKEN ?? 'not_set' },
     });
     const trackerData = await trackerResp.json() as MetadataLogType;
     if (!('version' in trackerData)) throw new Error(`Invalid txTracker data.`);
