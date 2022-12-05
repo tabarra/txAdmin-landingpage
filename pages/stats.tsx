@@ -5,6 +5,27 @@ import Footer from '../components/layout/Footer';
 import NavBar from '../components/layout/NavBar';
 import HtmlHead from '../components/misc/HtmlHead';
 import dynamic from 'next/dynamic';
+import humanizeDuration, { Unit } from 'humanize-duration';
+
+const humanizeOptions = {
+  language: "shortEn",
+  languages: {
+    shortEn: {
+      y: () => "y",
+      mo: () => "mo",
+      w: () => "w",
+      d: () => "d",
+      h: () => "h",
+      m: () => "m",
+      s: () => "s",
+      ms: () => "ms",
+    },
+  },
+  units: ["y", "mo", "w", "d", "h"] as Unit[],
+  spacer: '',
+  round: true,
+  largest: 3,
+};
 
 
 type MetadataLogType = {
@@ -30,6 +51,7 @@ type MetadataLogType = {
     warns: number;
     whitelists: number;
   };
+  realeaseDates: Record<string, string>;
 }
 
 type gspFuncPropsType = {
@@ -255,20 +277,33 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
     return (num * 100 / total).toFixed(2) + '%';
   }
 
-  type versionsTableType = [string, number, string, string][];
+  type versionsTableType = [string, number, string, string, string][];
   const versionsTable: versionsTableType = [];
 
   const txServerCount = data.servers.txAdmin[0];
   const tableShowThreshold = txServerCount * 0.005;
   let excludedCnt = 0;
   for (const [version, cnt] of data.versions) {
+    let timeAgo, fullDate;
+    if (data.realeaseDates[version]) {
+      const releaseDate = new Date(data.realeaseDates[version])
+      timeAgo = humanizeDuration(Date.now() - releaseDate.getTime(), humanizeOptions);
+      fullDate = releaseDate.toLocaleDateString(['en'], { dateStyle: 'long' });
+    }
+
     if (cnt > tableShowThreshold) {
-      versionsTable.push([version, cnt, toPct(cnt, txServerCount), '1yr, 2m, 3w, 4d']);
+      versionsTable.push([
+        version,
+        cnt,
+        toPct(cnt, txServerCount),
+        timeAgo ?? '--',
+        fullDate ?? '--'
+      ]);
     } else {
       excludedCnt += cnt;
     }
   }
-  versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--']);
+  versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--', '--']);
 
   return (
     <div className="overflow-x-auto relative shadow-md sm:rounded-lg min-w-fit">
@@ -284,13 +319,13 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
             <th scope="col" className="py-3 px-6">
               %
             </th>
-            {/* <th scope="col" className="py-3 px-6">
+            <th scope="col" className="py-3 px-6">
               Release
-            </th> */}
+            </th>
           </tr>
         </thead>
         <tbody>
-          {versionsTable.map(([version, cnt, pct, date]) => (
+          {versionsTable.map(([version, cnt, pct, timeAgo, fullDate]) => (
             <tr className="border-b last:border-b-0 bg-neutral-800 border-neutral-700 hover:bg-neutral-600" key={version}>
               <th scope="row" className="py-4 px-6 font-medium whitespace-nowrap text-white">
                 {version}
@@ -301,9 +336,9 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
               <td className="py-4 px-6 text-right">
                 {pct}
               </td>
-              {/* <td className="py-4 px-6 text-right">
-                {date}
-              </td> */}
+              <td className="py-4 px-6 text-right" title={fullDate}>
+                {timeAgo}
+              </td>
             </tr>
           ))}
         </tbody>
