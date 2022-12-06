@@ -306,7 +306,7 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
   versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--', '--']);
 
   return (
-    <div className="overflow-scroll relative shadow-md rounded-lg w-full h-min">
+    <div className="overflow-x-scroll relative shadow-md rounded-lg w-full h-min">
       <table className="w-full text-sm text-left text-neutral-400">
         <thead className="text-xs uppercase bg-neutral-700 text-neutral-400">
           <tr className='text-center'>
