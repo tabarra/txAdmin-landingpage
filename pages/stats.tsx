@@ -107,10 +107,10 @@ Tooltip attempt
     <span className='text-txgreen text-xl inline'>
       18585 (xx.xx%)
     </span>
-    <p className='text-gray-300'>txAdmin Servers</p>
+    <p className='text-neutral-300'>txAdmin Servers</p>
   </div>
 
-  <div className='absolute w-autox p-2 top-full left-0 mt-3 w-72 rounded-md shadow-md text-gray-600 bg-gray-200 text-sm font-bold transition-all duration-150 scale-0 origin-top group-hover:scale-100'>
+  <div className='absolute w-autox p-2 top-full left-0 mt-3 w-72 rounded-md shadow-md text-neutral-600 bg-gray-200 text-sm font-bold transition-all duration-150 scale-0 origin-top group-hover:scale-100'>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
 </div>
@@ -141,10 +141,10 @@ const StatsCard: React.FC<StatsCardProps> = ({
         <IconComponent className='h-8 text-neutral-800' />
       </i>
       <div>
-        <span className='text-txgreen text-xl'>
+        <span className='text-txgreen text-lg'>
           {children}
         </span>
-        <p className='text-gray-300'>{title}</p>
+        <p className='text-neutral-400 text-md'>{title}</p>
       </div>
     </div>
   );
@@ -306,7 +306,7 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
   versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--', '--']);
 
   return (
-    <div className="overflow-x-auto relative shadow-md sm:rounded-lg min-w-fit">
+    <div className="overflow-scroll relative shadow-md rounded-lg w-full h-min">
       <table className="w-full text-sm text-left text-neutral-400">
         <thead className="text-xs uppercase bg-neutral-700 text-neutral-400">
           <tr className='text-center'>
@@ -369,24 +369,27 @@ export default function Home(props: gspPropsType) {
   }
 
   return (
-    <>
+    <div className='space-y-10'>
       <HtmlHead />
-      <NavBar />
+      <div className='bg-neutral-800'>
+        <NavBar />
+      </div>
+
 
       <div className='space-y-28 bg-neutral-900'>
-        <div className='container mx-auto max-w-6xl p-8 space-y-6'>
-          <h1 className='text-gray-400 text-4xl text-center max-w-3xl mx-auto'>txAdmin Statistics</h1>
+        <div className='container mx-auto max-w-6xl p-8 space-y-16'>
+          <h1 className='text-neutral-200 font-medium text-4xl text-center max-w-3xl mx-auto'>txAdmin Statistics</h1>
           {pageContent}
-          <p className="text-gray-400 text-md italic text-center max-w-3xl mx-auto">
+          <p className="text-neutral-400 text-md italic text-center max-w-3xl mx-auto">
             <strong>Note:</strong> The FiveM public serverlist contains all servers (public and private), and txTracker collects, processes and enriches this data to deliver the stats above.
             This is not a cumulative measurement, just a snapshot of the online servers at the time of the hourly scan.
           </p>
         </div>
       </div>
 
-      <footer className='bg-neutral-900 pt-16 '>
+      <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }
