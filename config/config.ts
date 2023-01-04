@@ -95,5 +95,5 @@ export const FeaturesData: FeatureItemData[] = [
 
 export const ThirdPartyURLs = {
   zapLink: 'https://zap-hosting.com/txadmin2',
-  serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server/',
+  serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server-txadmin/',
 };

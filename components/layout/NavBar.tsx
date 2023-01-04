@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const NavItem: React.FC<NavbarItemData> = ({ name, url, openNew }) => (
   <a
-    className='duration-200 ease-in-out text-white hover:text-gray-400 text-md font-medium'
+    className='duration-200 ease-in-out text-white hover:text-neutral-400 text-md font-medium'
     href={url}
     target={openNew ? '_blank' : ''}
     rel='noopener'
@@ -31,7 +31,7 @@ export default function NavBar() {
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-neutral-800 rounded-xl p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-neutral-900 duration-100 ease-in-out focus:outline-none focus:ring-0">
+            <Popover.Button className="bg-neutral-800 rounded-xl p-2 inline-flex items-center justify-center text-neutral-400 hover:text-neutral-500 hover:bg-neutral-900 duration-100 ease-in-out focus:outline-none focus:ring-0">
               <span className="sr-only">Open menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -66,7 +66,7 @@ export default function NavBar() {
                   </Link>
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="bg-neutral-800 rounded-lg p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-neutral-800 duration-100 ease-in-out focus:outline-none focus:ring-0">
+                  <Popover.Button className="bg-neutral-800 rounded-lg p-2 inline-flex items-center justify-center text-neutral-400 hover:text-neutral-500 hover:bg-neutral-800 duration-100 ease-in-out focus:outline-none focus:ring-0">
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>

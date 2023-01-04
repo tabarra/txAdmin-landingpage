@@ -110,7 +110,7 @@ Tooltip attempt
     <p className='text-neutral-300'>txAdmin Servers</p>
   </div>
 
-  <div className='absolute w-autox p-2 top-full left-0 mt-3 w-72 rounded-md shadow-md text-neutral-600 bg-gray-200 text-sm font-bold transition-all duration-150 scale-0 origin-top group-hover:scale-100'>
+  <div className='absolute w-autox p-2 top-full left-0 mt-3 w-72 rounded-md shadow-md text-neutral-600 bg-neutral-200 text-sm font-bold transition-all duration-150 scale-0 origin-top group-hover:scale-100'>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </div>
 </div>
@@ -144,7 +144,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
         <span className='text-txgreen text-lg'>
           {children}
         </span>
-        <p className='text-neutral-400 text-md'>{title}</p>
+        <p className='text-neutral-400 text-sm'>{title}</p>
       </div>
     </div>
   );
@@ -306,7 +306,7 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
   versionsTable.push(['under 0.05%', excludedCnt, toPct(excludedCnt, txServerCount), '--', '--']);
 
   return (
-    <div className="overflow-x-scroll relative shadow-md rounded-lg w-full h-min">
+    <div className="overflow-x-scroll sm:overflow-hidden relative shadow-md rounded-lg w-full h-min">
       <table className="w-full text-sm text-left text-neutral-400">
         <thead className="text-xs uppercase bg-neutral-700 text-neutral-400">
           <tr className='text-center'>

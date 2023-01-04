@@ -7,7 +7,7 @@ export default function ZapCallToAction() {
       <div className="flex flex-col space-y-7 lg:space-y-0 lg:flex-row p-10 justify-evenly items-center">
         <div className="space-y-5 text-center lg:text-left lg:space-y-0">
           <h2 className="text-white font-bold text-2xl">Get your own FiveM <span className="text-txgreen">txAdmin</span> server</h2>
-          <p className="text-gray-300 text-base xl:text-lg whitespace-normal">DDoS protected, pre-licensed & pre-configured FiveM servers with <span className="text-green-400"><a href="https://zap-hosting.com/txadmin2" rel="noopener">ZAP-Hosting</a></span>.</p>
+          <p className="text-neutral-300 text-base xl:text-lg whitespace-normal">DDoS protected, pre-licensed & pre-configured FiveM servers with <span className="text-green-400"><a href="https://zap-hosting.com/txadmin2" rel="noopener">ZAP-Hosting</a></span>.</p>
         </div>
         <div>
           <a href="https://zap-hosting.com/txadmin2" target="_blank" rel="noopener">
