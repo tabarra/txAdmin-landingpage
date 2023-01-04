@@ -32,7 +32,7 @@ export const StatCounter: React.FC<StatCounterProps> = ({
         />
         {valueUnit}
       </span>
-      <span className='text-gray-300 text-sm md:text-base'>
+      <span className='text-neutral-300 text-sm md:text-base'>
         {valueSuffix} <span className='hidden md:inline'>{labelSuffix ?? ''}</span>
       </span>
     </div>

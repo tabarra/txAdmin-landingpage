@@ -18,7 +18,7 @@ export default function Header() {
               <h1 className='text-white font-bold text-2xl lg:text-5xl min-w-0'>
                 Manage & Monitor your <span className="text-fivem-red">FiveM</span> Server
               </h1>
-              <p className='text-gray-300 text-md font-medium lg:text-lg px-16'>
+              <p className='text-neutral-300 text-md font-medium lg:text-lg px-16'>
                 txAdmin is a <span className='font-bold'>completely free to use</span>,
                 full-featured <span className='font-bold'>web panel</span> to Manage &
                 Monitor your FiveM Server remotely, in use by over{' '}

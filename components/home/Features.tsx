@@ -6,9 +6,9 @@ const FeatureItem: React.FC<FeatureItemData> = ({ title, description, FeatureIco
   return (
     <div className='flex bg-neutral-800 group transform duration-200 ease-in-out hover:scale-105 rounded-2xl'>
       <div className='space-y-2 mx-auto p-7'>
-        <FeatureIcon className='flex mx-auto justify-center h-14 w-14 bg-txgreen duration-200 ease-in-out group-hover:bg-green-500 text-gray-800 rounded-2xl p-3' />
+        <FeatureIcon className='flex mx-auto justify-center h-14 w-14 bg-txgreen duration-200 ease-in-out group-hover:bg-green-500 text-neutral-800 rounded-2xl p-3' />
         <h4 className='text-center font-medium text-2xl text-white'>{title}</h4>
-        <p className='text-gray-400'>{description}</p>
+        <p className='text-neutral-400'>{description}</p>
       </div>
     </div>
   );
@@ -35,7 +35,7 @@ export default function Features() {
           <h3 className='text-3xl font-bold text-white'>
             Everything you need to manage your server
           </h3>
-          <p className='text-gray-400 text-base'>
+          <p className='text-neutral-400 text-base'>
             txAdmin has everything you need to manage your server, ranging from moderation
             to monitoring.
           </p>

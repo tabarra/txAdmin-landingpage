@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const NavItem: React.FC<NavbarItemData> = ({ name, url }) => (
   <a
-    className='duration-200 ease-in-out text-white hover:text-gray-400 text-sm font-medium'
+    className='duration-200 ease-in-out text-white hover:text-neutral-400 text-sm font-medium'
     href={url}
     target='_blank'
     rel='noopener'
@@ -29,7 +29,7 @@ export default function Footer() {
                         <NavItem url={item.url} name={item.name} key={item.name} />
                       ))}
         </nav>
-          <div className='mt-7 text-center text-base text-gray-400'>
+          <div className='mt-7 text-center text-base text-neutral-400'>
         <p>txAdmin is licensed under the MIT license.</p>
         <p>Page Design by <a className='font-medium' href='https://joshblack.me'>Josh Black</a>.</p>
         <p>&copy; 2019-{new Date().getFullYear()} André Tabarra</p>

@@ -58,7 +58,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                       onClick={() => onClose(false)}
                       ref={cancelButtonRef}
                     >
-                      <XMarkIcon className='h-5 w-5 text-gray-300' />
+                      <XMarkIcon className='h-5 w-5 text-neutral-300' />
                     </button>
                     </div>
                   </div>
@@ -70,7 +70,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                       Let&apos;s get you up and running.
                     </Dialog.Title>
                     <div className='mt-2'>
-                      <p className='text-sm text-gray-400'>
+                      <p className='text-sm text-neutral-400'>
                         Launching your server with{' '}
                         <a
                           href='https://zap-hosting.com/txadmin2'
@@ -101,14 +101,14 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                 <a href={ThirdPartyURLs.serverGetStarted} target='_blank' rel='noopener'>
                   <button
                     type='button'
-                    className='mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-dialog-btn-2 text-base font-medium text-gray-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
+                    className='mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-dialog-btn-2 text-base font-medium text-neutral-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
                   >
                     Manual Setup
                   </button>
                 </a>
                 <button
                   type='button'
-                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-neutral-800 text-base font-bold text-gray-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
+                  className='sm:hidden mt-3 w-full inline-flex justify-center rounded-lg shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-neutral-800 text-base font-bold text-neutral-200 hover:bg-dialog-btn-hvr focus:outline-none focus:ring-0 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm'
                   onClick={() => onClose(false)}
                   ref={cancelButtonRef}
                 >
