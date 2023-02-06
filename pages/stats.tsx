@@ -90,7 +90,7 @@ export async function getServerSideProps({ req, res }: gspFuncPropsType): Promis
   } catch (error) {
     return {
       props: {
-        error: (error as Error).message,
+        error: 'Failed to retrieve txTracker data.',
       }
     };
   }

@@ -37,9 +37,9 @@ export const NavbarItems: NavbarItemData[] = [
 
 
 export const TxAdminStats = {
-  servers: 18585,
-  admins: 69013,
-  bans: 1232368,
+  servers: 20165,
+  admins: 76289,
+  bans: 1265368,
 }
 
 export const TxMetaFields = {
