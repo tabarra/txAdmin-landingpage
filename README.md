@@ -1,5 +1,5 @@
 # txAdmin-landingpage
-This is the Landing Page for https://txadm.in/  
+This is the Landing Page for https://txadmin.gg/  
 If you are here, you are probably looking for one of the following links:  
 - [Main GitHub Repository](https://github.com/tabarra/txAdmin)
 - [Official Discord Server](https://discord.gg/yWxjt9zPWR)

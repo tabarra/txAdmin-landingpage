@@ -15,9 +15,9 @@ export default function HtmlHead() {
             <meta property='og:site_name' content='txAdmin' />
             <meta property='og:title' content={TxMetaFields.title} />
             <meta property='og:description' content={TxMetaFields.description} />
-            <meta property='og:url' content='https://txadm.in/' />
-            <meta property='og:image' content='https://txadm.in/tx-discord-logo.png' />
-            <link rel='canonical' href='https://txadm.in/' />
+            <meta property='og:url' content='https://txadmin.gg/' />
+            <meta property='og:image' content='https://txadmin.gg/tx-discord-logo.png' />
+            <link rel='canonical' href='https://txadmin.gg/' />
         </Head>
     )
 }

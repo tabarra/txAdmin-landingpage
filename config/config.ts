@@ -35,16 +35,16 @@ export const NavbarItems: NavbarItemData[] = [
   },
 ];
 
-
+//FIXME: use the api to get the real numbers
 export const TxAdminStats = {
-  servers: 20165,
-  admins: 76289,
-  bans: 1265368,
+  servers: 21561,
+  admins: 80307,
+  bans: 1534433,
 }
 
 export const TxMetaFields = {
   title: 'txAdmin - FiveM/RedM Server Management',
-  description: `txAdmin is a full featured web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by over ${TxAdminStats.servers} thousand servers worldwide at any given time.`,
+  description: `txAdmin is a full featured web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by tens of thousand of servers worldwide at any given time.`,
   keywords: 'txadmin, login, fivem server, manage fivem, fivem monitoring, fivem server panel, fivem web panel, fivem recipes'
 }
 
