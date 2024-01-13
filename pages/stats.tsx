@@ -291,7 +291,7 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
       fullDate = releaseDate.toLocaleDateString(['en'], { dateStyle: 'long' });
     }
 
-    if (cnt > tableShowThreshold) {
+    if (cnt > tableShowThreshold || version.includes('beta')) {
       versionsTable.push([
         version,
         cnt,
