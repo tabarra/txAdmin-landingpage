@@ -37,9 +37,9 @@ export const NavbarItems: NavbarItemData[] = [
 
 //FIXME: use the api to get the real numbers
 export const TxAdminStats = {
-  servers: 27289,
+  servers: 28845,
   admins: 155023,
-  bans: 2088151,
+  bans: 2155168,
 }
 
 export const TxMetaFields = {
