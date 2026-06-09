@@ -20,8 +20,8 @@ export default function About() {
     <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 mx-auto justify-evenly items-center">
       <div className="w-4/5 md:w-2/5 text-center md:text-left">
           <div className="space-y-2">
-            <h2 className="text-4xl font-bold text-white">Managing your <span className="text-fivem-red">FiveM</span> server just got <span className="text-transparent bg-clip-text bg-gradient-to-t from-green-300 to-green-500">better</span>.</h2>
-            <p className="text-neutral-400 text-lg">txAdmin offers a wide range of features designed to make managing a FiveM server as easy as anything. Setting up txAdmin is completely free, begin your journey on using the most simplistic, yet functional FiveM server web panel.</p>
+            <h2 className="text-4xl font-bold text-white">Managing your FiveM server just got <span className="text-transparent bg-clip-text bg-gradient-to-t from-green-300 to-green-500">better</span>.</h2>
+            <p className="text-txneutraltext text-lg">txAdmin offers a wide range of features designed to make managing a FiveM server as easy as anything. Setting up txAdmin is completely free, begin your journey on using the most simplistic, yet functional FiveM server web panel.</p>
           </div>
       </div>
         <div className="bg-snaily bg-cover flex items-center w-80 h-80 md:w-96 md:h-96 rounded-2xl object-cover">

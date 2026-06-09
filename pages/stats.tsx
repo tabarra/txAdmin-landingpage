@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { GetStaticProps } from 'next';
 import { HashtagIcon, ChartBarIcon, UserGroupIcon, UserIcon, NoSymbolIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import CountUp from 'react-countup';
 import Footer from '../components/layout/Footer';
@@ -6,6 +6,8 @@ import NavBar from '../components/layout/NavBar';
 import HtmlHead from '../components/misc/HtmlHead';
 import dynamic from 'next/dynamic';
 import humanizeDuration, { Unit } from 'humanize-duration';
+import type { TrackerStatsPageData, TrackerStatsPageProps } from '../lib/trackerStats';
+import { getTrackerStatsStaticProps } from '../lib/trackerStats';
 
 const humanizeOptions = {
   language: "shortEn",
@@ -28,73 +30,9 @@ const humanizeOptions = {
 };
 
 
-type MetadataLogType = {
-  version: number;
-  ts: string;
-  players: [number, number]
-  usage: {
-    top100: [number, number];
-    top500: [number, number];
-    top1000: [number, number];
-  };
-  servers: {
-    total: number;
-    public: [number, number];
-    txAdmin: [number, number];
-  };
-  versions: [string, number][];
-  publicNumbers: {
-    admins: number;
-    players: number;
-    playTime: number;
-    bans: number;
-    warns: number;
-    whitelists: number;
-  };
-  realeaseDates: Record<string, string>;
-}
-
-type gspFuncPropsType = {
-  req: NextApiRequest,
-  res: NextApiResponse,
-}
-type gspPropsType = MetadataLogType | { error: string }
-type gspReturnType = {
-  props: gspPropsType
+export const getStaticProps: GetStaticProps<TrackerStatsPageProps> = async () => {
+  return getTrackerStatsStaticProps();
 };
-type ReleasesApiRespType = {
-  tag_name: string;
-  published_at: string;
-}[];
-
-export async function getServerSideProps({ req, res }: gspFuncPropsType): Promise<gspReturnType> {
-  res.setHeader('Cache-Control', 'public, s-maxage=300');
-
-  try {
-    //txTracker Data
-    const trackerResp = await fetch(`${process.env.TRACKER_API_URL}/public/stats`, {
-      headers: { 'x-api-token': process.env.TRACKER_API_TOKEN ?? 'not_set' },
-    });
-    const trackerData = await trackerResp.json() as MetadataLogType;
-    if (!('version' in trackerData)) throw new Error(`Invalid txTracker data.`);
-
-    //Github tag dates
-    // const ghResp = await fetch(`https://api.github.com/repos/tabarra/txAdmin/releases`);
-    // const ghData = await ghResp.json() as ReleasesApiRespType;
-    // if (!Array.isArray(ghData)) throw new Error(`Invalid GitHub API data.`);
-    // const versionDates = new Map();
-    //FIXME: we actually need to use the API with pagination, RIP
-
-
-    return { props: trackerData };
-  } catch (error) {
-    return {
-      props: {
-        error: 'Failed to retrieve txTracker data.',
-      }
-    };
-  }
-}
 
 
 /*
@@ -144,13 +82,13 @@ const StatsCard: React.FC<StatsCardProps> = ({
         <span className='text-txgreen text-lg'>
           {children}
         </span>
-        <p className='text-neutral-400 text-sm'>{title}</p>
+        <p className='text-txneutraltext text-sm'>{title}</p>
       </div>
     </div>
   );
 };
 type MetadataComponentPropsType = {
-  data: MetadataLogType;
+  data: TrackerStatsPageData;
 }
 const StatsCards = ({ data }: MetadataComponentPropsType) => {
   const toPct = ([yes, no]: [number, number]) => (yes / (yes + no)) * 100;
@@ -287,7 +225,7 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
     let timeAgo, fullDate;
     if (data.realeaseDates[version]) {
       const releaseDate = new Date(data.realeaseDates[version])
-      timeAgo = humanizeDuration(Date.now() - releaseDate.getTime(), humanizeOptions);
+      timeAgo = humanizeDuration(data.pageGeneratedAt - releaseDate.getTime(), humanizeOptions);
       fullDate = releaseDate.toLocaleDateString(['en'], { dateStyle: 'long' });
     }
 
@@ -307,8 +245,8 @@ const StatsVersionsTable = ({ data }: MetadataComponentPropsType) => {
 
   return (
     <div className="overflow-x-scroll sm:overflow-hidden relative shadow-md rounded-lg w-full h-min">
-      <table className="w-full text-sm text-left text-neutral-400">
-        <thead className="text-xs uppercase bg-neutral-700 text-neutral-400">
+      <table className="w-full text-sm text-left text-txneutraltext">
+        <thead className="text-xs uppercase bg-neutral-700 text-txneutraltext">
           <tr className='text-center'>
             <th scope="col" className="py-3 px-6">
               Version
@@ -352,7 +290,7 @@ const DynamicDate = dynamic(() => import('../components/misc/LastUpdated'), {
   ssr: false
 })
 
-export default function Home(props: gspPropsType) {
+export default function Home(props: TrackerStatsPageProps) {
   let pageContent;
   if ('error' in props) {
     pageContent = <h4 className='text-red-400 text-2xl text-center max-w-3xl mx-auto'>Error: {props.error}</h4>;
@@ -376,11 +314,11 @@ export default function Home(props: gspPropsType) {
       </div>
 
 
-      <div className='space-y-28 bg-neutral-900'>
+      <div className='space-y-28 bg-txneutralbg'>
         <div className='container mx-auto max-w-6xl p-8 space-y-16'>
           <h1 className='text-neutral-200 font-medium text-4xl text-center max-w-3xl mx-auto'>txAdmin Statistics</h1>
           {pageContent}
-          <p className="text-neutral-400 text-md italic text-center max-w-3xl mx-auto">
+          <p className="text-txneutraltext text-md italic text-center max-w-3xl mx-auto">
             <strong>Note:</strong> The FiveM public serverlist contains all servers (public and private), and txTracker collects, processes and enriches this data to deliver the stats above.
             This is not a cumulative measurement, just a snapshot of the online servers at the time of the hourly scan.
           </p>

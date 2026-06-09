@@ -4,8 +4,8 @@ class txAdmin extends Document {
   render() {
     return (
       <Html lang="en">
-          <body className="bg-neutral-900">
         <Head />
+        <body className="bg-txneutralbg">
           <Main />
           <NextScript />
         </body>

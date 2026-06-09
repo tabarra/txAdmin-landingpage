@@ -25,21 +25,21 @@ export const NavbarItems: NavbarItemData[] = [
   },
   {
     name: 'Docs',
-    url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    url: 'https://github.com/citizenfx/txAdmin/blob/master/README.md',
     openNew: true,
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/tabarra/txAdmin/blob/master/README.md',
+    url: 'https://github.com/citizenfx/txAdmin/blob/master/README.md',
     openNew: true,
   },
 ];
 
-//FIXME: use the api to get the real numbers
+// Fallback values used only if txTracker is unavailable during ISR generation.
 export const TxAdminStats = {
-  servers: 28845,
-  admins: 155023,
-  bans: 2155168,
+  servers: 32_500,
+  admins: 143_500,
+  bans: 2_320_000,
 }
 
 export const TxMetaFields = {
@@ -93,7 +93,7 @@ export const FeaturesData: FeatureItemData[] = [
   },
 ];
 
-export const ThirdPartyURLs = {
-  zapLink: 'https://zap-hosting.com/txadmin2',
+export const FivemUrls = {
+  serversLandingPage: 'https://fivem.net/server-hosting',
   serverGetStarted: 'https://docs.fivem.net/docs/server-manual/setting-up-a-server-txadmin/',
 };

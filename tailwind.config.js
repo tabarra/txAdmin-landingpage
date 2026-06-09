@@ -9,26 +9,28 @@ module.exports = {
       lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-      'zap': '0 2px 4px 0 #4bc46b',
       '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
     },
     extend: {
       backgroundImage: theme => ({
-        'hero': "url('/hero.webp')",
+        'hero': "url('/cfx-bg.png')",
         'snaily': "url('/snaily.svg')",
       }),
       backgroundSize: {
         '4x': '400%'
       },
       colors: {
-        'content': '#192338',
-        'cta': '#121212',
-        'dialog-btn-hvr': '#1c1c1c',
-        'dialog-btn-2': '#282828',
-        'txgreen': '#45E696',
-        'fivem-red': '#ff8637',
+        'content': '#191A1C',
+        'cta': '#191A1C',
+        'dialog-btn-hvr': '#3F4146',
+        'dialog-btn-2': '#333539',
+        'txgreen': '#078E6C',
+        'fivem-red': '#F7F7F8',
+        white: '#F7F7F8',
+        txneutraltext: '#909196',
+        txneutralbg: '#191A1C',
       },
       fontFamily: {
         sans: ['"Montserrat"', 'sans-serif']
