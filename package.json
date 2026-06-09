@@ -2,39 +2,51 @@
   "name": "tx-landing",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0 <26"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.12",
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^2.0.11",
     "@types/humanize-duration": "^3.27.1",
-    "@types/react-icons": "^3.0.0",
     "framer-motion": "^6.4.3",
     "humanize-duration": "^3.27.3",
-    "next": "^12.1.0",
+    "next": "16.2.6",
     "react": "^18.2.0",
     "react-countup": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "recharts": "2.1.12",
+    "recharts": "2.15.4",
     "recoil": "^0.7.4"
   },
   "devDependencies": {
-    "@types/node": "^18.0.1",
-    "@types/react": "18.0.14",
+    "@types/node": "20.19.41",
+    "@types/react": "18.3.29",
     "autoprefixer": "^10.4.7",
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.2.0",
-    "postcss": "^8.4.14",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "postcss": "8.5.15",
     "prettier": "^2.4.1",
-    "tailwindcss": "^3.1.4",
-    "typescript": "4.7.4"
+    "tailwindcss": "3.4.19",
+    "typescript": "6.0.3"
+  },
+  "overrides": {
+    "anymatch": {
+      "picomatch": "2.3.2"
+    },
+    "micromatch": {
+      "picomatch": "2.3.2"
+    },
+    "readdirp": {
+      "picomatch": "2.3.2"
+    }
   },
   "nextBundleAnalysis": {
     "budget": 358400,
