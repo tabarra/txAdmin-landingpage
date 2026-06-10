@@ -5,7 +5,7 @@ import { HeartIcon } from '@heroicons/react/24/solid';
 import { FivemUrls } from '../../config/config';
 
 export default function GettingStartedDialog(props: { open: any; onClose: any; }) {
-  const {open, onClose} = props;
+  const { open, onClose } = props;
   const cancelButtonRef = useRef<HTMLButtonElement | null>(null);
 
   return (
@@ -53,13 +53,13 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                     </div>
                     <div>
                       <button
-                      type='button'
-                      className='p-2.5 sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
-                      onClick={() => onClose(false)}
-                      ref={cancelButtonRef}
-                    >
-                      <XMarkIcon className='h-5 w-5 text-neutral-300' />
-                    </button>
+                        type='button'
+                        className='p-2.5 sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
+                        onClick={() => onClose(false)}
+                        ref={cancelButtonRef}
+                      >
+                        <XMarkIcon className='h-5 w-5 text-neutral-300' />
+                      </button>
                     </div>
                   </div>
                   <div className='mt-3 text-center sm:mt-0 sm:text-left'>
@@ -94,7 +94,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                     className='w-full group inline-flex justify-center rounded-lg text-black shadow-sm px-4 py-2 transition duration-200 ease-in-out bg-txgreen text-base font-semibold hover:bg-emerald-400 focus:outline-none focus:ring-0 sm:ml-3 sm:w-auto sm:text-sm'
                   >
                     Find a Server Host
-                    <ArrowRightIcon className='group-hover:animate-bounce-x text-black h-6 sm:h-5 sm:h-5 ml-2' />
+                    <ArrowRightIcon className='group-hover:animate-bounce-x text-black h-6 sm:h-5 ml-2' />
                   </button>
                 </a>
                 <a href={FivemUrls.serverGetStarted} target='_blank' rel='noopener'>

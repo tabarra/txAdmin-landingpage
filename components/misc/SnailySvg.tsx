@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SnailySvg: React.FC = ({}) => (
+export const SnailySvg: React.FC = ({ }) => (
   <svg
     className='flex mx-auto opacity-90 h-48 w-48 transform duration-200 hover:scale-110'
     xmlns='http://www.w3.org/2000/svg'

@@ -8,21 +8,21 @@ import '@fontsource/montserrat/700.css';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-        <Script
-          src='https://www.googletagmanager.com/gtag/js?id=G-4DK3P3MG65'
-          strategy='afterInteractive'
-        />
-        <Script id='google-analytics' strategy='afterInteractive'>
-          {`
+      <Script
+        src='https://www.googletagmanager.com/gtag/js?id=G-4DK3P3MG65'
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
           gtag('config', 'G-4DK3P3MG65');
         `}
-        </Script>
-        <Component {...pageProps} />
-        </>
+      </Script>
+      <Component {...pageProps} />
+    </>
   );
 }
 export default MyApp;

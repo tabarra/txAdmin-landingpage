@@ -7,7 +7,7 @@ export default function FooterCallToAction() {
 
   return (
     <>
-    <GettingStartedDialog open={open} onClose={() => setOpen(false)} />
+      <GettingStartedDialog open={open} onClose={() => setOpen(false)} />
       <div className="bg-cta shadow-md">
         <div className="flex flex-col space-y-7 lg:space-y-0 lg:flex-row p-12 justify-evenly items-center">
           <div className="space-y-5 text-center lg:text-left lg:space-y-0">
