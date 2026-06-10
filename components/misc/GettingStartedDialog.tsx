@@ -48,13 +48,13 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
               <div className='bg-txneutralbg px-4 pt-5 pb-4 sm:p-6 sm:pb-4'>
                 <div className='space-y-4'>
                   <div className='flex justify-between'>
-                    <div className='mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-200 sm:mx-0 sm:h-10 sm:w-10'>
-                      <HeartIcon className='w-6 h-6 text-green-400' />
+                    <div className='mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-emerald-200 sm:mx-0 sm:h-10 sm:w-10'>
+                      <HeartIcon className='w-6 h-6 text-emerald-400' />
                     </div>
                     <div>
                       <button
                       type='button'
-                      className='p-2.5 hidden inline-block sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out block rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
+                      className='p-2.5 sm:block bg-neutral-800 hover:bg-dialog-btn-hvr transition duration-200 ease-in-out rounded-full mx-auto flex-shrink-0 flex items-center justify-center'
                       onClick={() => onClose(false)}
                       ref={cancelButtonRef}
                     >
@@ -65,7 +65,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                   <div className='mt-3 text-center sm:mt-0 sm:text-left'>
                     <Dialog.Title
                       as='h3'
-                      className='text-lg leading-6 font-medium text-green-200'
+                      className='text-lg leading-6 font-medium text-emerald-200'
                     >
                       Let&apos;s get you up and running.
                     </Dialog.Title>
@@ -75,7 +75,7 @@ export default function GettingStartedDialog(props: { open: any; onClose: any; }
                         <a
                           href={FivemUrls.serversLandingPage}
                           target='_blank'
-                          className='text-green-300 font-bold'
+                          className='text-emerald-300 font-bold'
                           rel='noopener'
                         >
                           FiveM server hosting page
