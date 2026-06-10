@@ -5,6 +5,7 @@ import { TxAdminStats } from '../../config/config';
 import type { HomeStats } from '../../lib/trackerStats';
 import NavBar from './NavBar';
 import GettingStartedDialog from '../misc/GettingStartedDialog';
+import styles from './Hero.module.css';
 
 export type HeroProps = {
   stats?: HomeStats | null;
@@ -18,7 +19,7 @@ export default function Header({ stats }: HeroProps) {
   return (
     <>
       <GettingStartedDialog open={open} onClose={() => setOpen(false)} />
-      <div className='bg-hero bg-cover'>
+      <div className={styles.cfxBg}>
         <NavBar />
         <header className='flex mx-auto justify-center h-screen'>
           <div className='m-auto max-w-5xl p-4'>

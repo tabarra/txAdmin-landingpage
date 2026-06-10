@@ -1,0 +1,84 @@
+/*
+ * Replica of cfx-bg.png (reference canvas: 2560x1440).
+ * Layer 1: top-center radial glow over #111, exact values from Figma.
+ * Layer 2 (::before): vertical #1F1F1F -> #45E696 gradient at 0.32 opacity
+ *   (svg: fill-opacity 0.4 * group opacity 0.8), masked by a repeating
+ *   2.67px dot grid with 29.33px spacing.
+ * Layer 3 (::after): a soft pool of light that drifts slowly behind the
+ *   same dot mask. The grid never moves; dots only brighten and fade as
+ *   the light wanders past them.
+ */
+.cfxBg {
+  --cfx-dot-mask: radial-gradient(circle, #000 1.05px, transparent 1.45px);
+  --cfx-dot-mask-size: 29.333px 29.333px;
+  --cfx-dot-mask-pos: -10.667px -13.333px; /* dot centers at (4 + 29.33n, 1.33 + 29.33m) */
+  position: relative;
+  isolation: isolate;
+  background-color: #111111;
+  background-image: radial-gradient(
+    177.52% 139.66% at 50% 0%,
+    rgb(7 142 108 / 0) 41.82%,
+    rgb(7 142 108 / 0.4) 67.47%,
+    #078e6c 100%
+  );
+}
+
+.cfxBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, #1f1f1f, #45e696);
+  opacity: 0.32;
+  mask-image: var(--cfx-dot-mask);
+  mask-size: var(--cfx-dot-mask-size);
+  mask-position: var(--cfx-dot-mask-pos);
+}
+
+.cfxBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(
+    closest-side,
+    rgb(69 230 150 / 0.5),
+    rgb(69 230 150 / 0)
+  );
+  background-size: 55% 80%;
+  background-repeat: no-repeat;
+  background-position: 12% 25%;
+  mask-image: var(--cfx-dot-mask);
+  mask-size: var(--cfx-dot-mask-size);
+  mask-position: var(--cfx-dot-mask-pos);
+  animation: cfx-dot-glow 8s ease-in-out infinite;
+}
+
+/* Waypoints keep the pool fully inside the field so it reads as a
+   presence that wanders rather than something entering and leaving;
+   ease-in-out between them makes the light linger at each turn. */
+@keyframes cfx-dot-glow {
+  0% {
+    background-position: 12% 25%;
+  }
+  25% {
+    background-position: 50% 8%;
+  }
+  50% {
+    background-position: 88% 35%;
+  }
+  75% {
+    background-position: 45% 70%;
+  }
+  100% {
+    background-position: 12% 25%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfxBg::after {
+    display: none; /* falls back to the exact static design */
+  }
+}

@@ -14,10 +14,6 @@ module.exports = {
       none: 'none',
     },
     extend: {
-      backgroundImage: theme => ({
-        'hero': "url('/cfx-bg.png')",
-        'snaily': "url('/snaily.svg')",
-      }),
       backgroundSize: {
         '4x': '400%'
       },
