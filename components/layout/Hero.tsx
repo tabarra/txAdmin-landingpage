@@ -32,7 +32,7 @@ export default function Header({ stats }: HeroProps) {
                 <p className='relative text-neutral-300 text-md font-medium lg:text-lg px-16'>
                   txAdmin is the <span className='font-bold'>official</span>,
                   full-featured, web panel and in-game menu to Manage & Monitor your{' '}
-                  FiveM Server remotely, trusted by tens of thousands of servers worldwide.
+                  FiveM server, trusted by tens of thousands of servers worldwide.
                 </p>
               </div>
               <div className='space-y-10'>
