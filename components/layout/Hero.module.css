@@ -23,6 +23,19 @@
   );
 }
 
+/* Soft pool of the page background color behind the hero subtext, so the
+   dot matrix barely shows through without a visible hard-edged box. */
+.textScrim {
+  position: absolute;
+  /* The parent div is wider than the text (px-16), so pull the sides in;
+     the blur then fades out right around the text edges. */
+  inset: -0.5rem 2rem;
+  pointer-events: none;
+  background: rgb(17 17 17 / 0.9);
+  border-radius: 2rem;
+  filter: blur(18px);
+}
+
 .cfxBg::before {
   content: '';
   position: absolute;

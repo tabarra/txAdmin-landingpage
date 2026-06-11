@@ -24,14 +24,17 @@ export default function Header({ stats }: HeroProps) {
         <header className='flex mx-auto justify-center h-screen'>
           <div className='m-auto max-w-5xl p-4'>
             <div className='flex flex-col space-y-4 align-middle text-center'>
-              <h1 className='text-white font-bold text-2xl lg:text-5xl min-w-0'>
+              <h1 className='z-10 text-white font-bold text-2xl lg:text-5xl min-w-0'>
                 Manage & Monitor your FiveM Server
               </h1>
-              <p className='text-neutral-300 text-md font-medium lg:text-lg px-16'>
-                txAdmin is the <span className='font-bold'>official</span>,
-                full-featured, web panel and in-game menu to Manage & Monitor your{' '}
-                FiveM Server remotely, trusted by tens of thousands of servers worldwide.
-              </p>
+              <div className="relative">
+                <div className={styles.textScrim}></div>
+                <p className='relative text-neutral-300 text-md font-medium lg:text-lg px-16'>
+                  txAdmin is the <span className='font-bold'>official</span>,
+                  full-featured, web panel and in-game menu to Manage & Monitor your{' '}
+                  FiveM Server remotely, trusted by tens of thousands of servers worldwide.
+                </p>
+              </div>
               <div className='space-y-10'>
                 <div className='flex justify-center mt-3 space-x-2 flex-wrap'>
                   <StatCounter
